@@ -1,0 +1,70 @@
+.faqsideBar {
+  ul {
+    border-radius: 5px;
+    border: 4px solid color(50);
+    background-color: color(65);
+    li {
+      &:not(:last-child) {
+        border-bottom: 1px solid;
+        border-bottom-color: rgba($color: color(400), $alpha: 0.2);
+      }
+      &.active {
+        a {
+          background-color: color(400);
+          color: color(50);
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+  a {
+    line-height: normal;
+    width: 100%;
+    color: color(800);
+    font-size: 14px;
+    padding: 18px 16px;
+    font-family: font(md);
+    border-radius: 3px;
+    display: block;
+    &:hover {
+      background-color: color(400);
+      color: color(50);
+      border-radius: 3px;
+    }
+  }
+  h3 {
+    font-size: 14px;
+    font-family: font(bd);
+    color: color(800);
+    padding: 25px 0px 20px 0px;
+    margin-bottom: 0px;
+  }
+  @media (max-width: 1699px) {
+    a {
+      padding: 16px;
+    }
+    h3 {
+      padding: 18px 0px;
+    }
+  }
+  @include media-breakpoint-down(xxl) {
+    a {
+      padding: 12px;
+      font-size: 14px;
+    }
+    h3 {
+      font-size: 14px;
+      padding: 14px 0px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    a {
+      padding: 10px;
+      font-size: 13px;
+    }
+    h3 {
+      font-size: 13px;
+      padding: 10px 0px;
+    }
+  }
+}

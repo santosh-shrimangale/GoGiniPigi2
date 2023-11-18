@@ -1,0 +1,217 @@
+.browzingSec{
+  .pageBanner{
+    &:after{    
+      right: 250px;
+      background-image: url("#{$imageurl}/blog-banner.png");
+      width: 100%;
+      height: 265px;
+      background-size: contain;
+      background-position: center right;
+      top: 25px;
+    }
+  }
+  .viewall-btn{
+    color: color(400);
+    &:after{width: calc(100% - 0px);}
+    &:hover{
+      &:after{width: 0;}
+    }
+  }
+  &_box{
+    margin-bottom: 50px;
+    &_img{
+      overflow: hidden; 
+      border-radius: 5px;
+      height: 235px;
+      img{
+        @include transition(0.5s);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &:hover{
+      img{
+        @include scale(1.2);
+      }
+    }
+    &_content{
+      h3{
+        font-size: 20px;
+        margin: 20px 0;
+        line-height: 24px;
+        @include text-clamp(2);
+        a{
+          color: color(800);
+          @include transition(0.5s);
+          &:hover{color: color(400);}
+        }
+      }
+      .browzingSecYear{
+        font-size: 13px;
+        color: color(200);
+      }
+      .readmore {
+        margin-top: 30px;
+        &:after{
+          left: 0;
+          width: calc(100% - 35px);
+        }
+        &:hover{
+          &:after{width: 0;}
+        }
+        em{
+          font-size: 10px;
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+  &_more{min-width: 150px;}
+
+  @media (max-width: 1599px){
+    h3{margin: 15px 0;}
+    .readmore{margin-top: 20px;}
+    .pageBanner{
+      &:after{
+        height: 230px;
+        right: 100px;
+      }
+    }
+    &_box{
+      &_content{
+        h3{
+          a{font-size: 18px;}
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(xxl){
+    h3{margin: 15px 0 5px;}
+    &_box{
+      margin-bottom: 30px;
+      &_content{
+        h3{
+          a{font-size: 16px;}
+        }
+        .readmore{margin-top: 10px;}
+      }
+    }
+    .pageBanner{
+      &:after{
+        top: 10px;
+        height: 115px;
+        right: 130px;
+      }
+    }
+  }
+  @include media-breakpoint-down(xl){
+    .pageBanner{
+      &:after{
+        right: 10px;
+      }
+    }
+    &_box{
+      // &_content{
+      //   h3{
+      //     font-size: 14px;
+      //     margin: 10px 0;
+      //     line-height: 20px;
+      //   }
+      // }
+      &_img{height: 200px;}
+    }
+  }
+  @include media-breakpoint-down(lg){
+    &_box{
+      margin-bottom: 20px;
+      &_content{
+        .readmore{margin-top: 15px;}        
+      }
+    }
+    .pageBanner{
+      &:after{
+         height: 85px;
+         top: 10px;
+        }
+    }
+  }
+  @include media-breakpoint-down(md){
+    &_box{
+      margin-bottom: 10px;
+      &_content{
+        .readmore{margin-top: 10px;}
+      }
+    }
+    .pageBanner{
+      &:after{
+        display: none;
+      }
+    }
+  }
+}
+.blogDetail{
+  .commonhead{
+    &_title{
+      @include media-breakpoint-up(lg){
+        font-size: 26px;
+      }      
+    }
+  }
+  &_divider{margin: 0 20px;}
+  &_head{
+    font-size: 20px;
+    color: color(800);
+  }
+  &_img{
+    position: relative;
+    margin-top: -150px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    &:hover{
+      @include transition(0.5s);
+      img{
+          @include transforms(scale(1.1));
+          @include transition(0.5s);
+      }
+    }
+    img{
+      height: 100%;
+      object-fit: cover;
+      @include transforms(scale(1));
+      @include transition(0.5s);
+    }
+  }
+  @media (max-width: 1599px){
+    &_img{margin-top: -100px;}
+  }
+  @include media-breakpoint-down(xxl){
+    &_head{
+      font-size: 16px;
+    }
+    &_divider{margin: 0 10px;}
+    &_img{
+      margin-top: -40px;
+      margin-bottom: 30px;
+      height: 400px;
+    }
+  }
+  @include media-breakpoint-down(lg){
+    &_head{
+      font-size: 14px;
+    }
+    &_divider{margin: 0 5px;}
+    &_img{     
+      margin-bottom: 20px;
+    }
+  }
+  @include media-breakpoint-down(md){
+    &_img{
+      height: 300px;
+      margin-bottom: 15px;
+    }
+  }
+}

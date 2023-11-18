@@ -1,0 +1,218 @@
+.form-group {
+  margin-bottom: 23px;
+  .ant-form-item{
+    margin-bottom: 0;
+  }
+  .form-control{
+    height: 45px;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 3px;
+    border: 1px solid rgba($color: color(180), $alpha: 0.1);
+    background-color: color(60);
+    font-size: 16px;
+    color: color(800);
+    &:focus {
+      border-color: color(400);
+      box-shadow: none;
+    }
+    &.textarea {
+      height: 120px;
+      resize: none;
+
+      &.h-165 {
+        min-height: 165px;
+      }
+    }
+  }
+  input[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      @include appearance(none);
+    }
+  }
+  label {
+    font-size: 14px;
+    font-family: font(bd);
+    color: color(800);
+    margin-bottom: 10px;
+    a {
+      color: color(800);
+    }
+  }
+  .sublabel {
+    font-size: 13px;
+    font-family: font(bk);
+  }
+  .form-icon {
+    input {
+      padding-right: 40px;
+    }
+    a {
+      color: color(200);
+      @include absolutecenter(y);
+      right: 0px;
+      padding: 4px;
+      width: 45px;
+      height: 100%;
+    }
+  }
+  .form-check {
+    input[type="checkbox"],
+    input[type="radio"] {
+      box-shadow: none;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+    }
+    input[type="checkbox"] {
+      border: 1px solid color(90);
+      border-radius: 3px;
+      position: relative;
+      top: -3px;
+      &:checked {
+        border-color: color(600);
+        background-color: color(600);
+        color: color(50);
+      }
+    }
+    input[type="radio"] {
+      border: 2px solid color(90);
+      background: url("#{$imageurl}/radio-style.svg");
+      margin-top: 2px;
+      &:checked {
+        border-color: color(650);
+        background-color: color(650);
+      }
+    }
+    label {
+      margin-left: 8px;
+      a {
+        font-family: font(md);
+        color: #2c8bff;
+        text-decoration: underline;
+      }
+    }
+    &.form-switch {
+      .form-check-input {
+        width: 38px;
+        height: 20px;
+        border-radius: 50px;
+        &[type="checkbox"] {
+          background-image: url("#{$imageurl}/toggle-white.svg");
+          background-color: color(150);
+          border-color: transparent;
+        }
+        &:checked {
+          &[type="checkbox"] {
+            background-color: color(600);
+            border-color: color(600);
+            background-image: url("#{$imageurl}/toggle-white.svg");
+          }
+        }
+        &:focus {
+          box-shadow: none;
+          border-color: transparent;
+          background-image: url("#{$imageurl}/toggle-white.svg");
+        }
+      }
+    }
+  }
+  .input-group {
+    &.date {
+      position: relative;
+      input {
+        padding-right: 40px;
+      }
+    }
+    &-append {
+      z-index: 3;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+    &-icon {
+      em {
+        color: color(600);
+        font-size: 16px;
+      }
+    }
+  }
+  .ant-form-item-explain-error{
+    font-size: 12px;
+    margin: 6px 0;
+  }
+  @media (max-width: 1699px) {
+    .form-check {
+      input[type="checkbox"],
+      input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        background-size: 14px;
+        top: -1px;
+      }
+      &.form-switch {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  @media (max-width: 1499px) {
+    .form-control {
+      &.textarea {
+        &.h-165 {
+          min-height: 120px;
+          height: 100px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(xxl) {
+    margin-bottom: 15px;
+    .form-control {
+      height: 40px;
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+    .form-check {      
+      label {
+        margin-left: 3px;
+      }
+    }
+    label {
+      font-size: 13px;
+    }
+    .input-group {
+      &-append {
+        top: 12px;
+        right: 15px;
+      }
+      &-icon {
+        em {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(xl) {
+    .form-check {
+      input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+      }
+    }
+    .form-control {
+      &.textarea {
+        &.h-165 {
+          min-height: 95px;
+          height: 100px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    label {
+      margin-bottom: 6px;
+    }
+  }
+}

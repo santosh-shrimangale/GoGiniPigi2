@@ -1,0 +1,43 @@
+.detailBox{
+  &_portfolio{
+    .col{
+        flex: 0 0 25%;
+        width: 25%;
+    }
+    .gallery{
+        overflow: hidden;
+        height: 205px;
+        &:hover{
+            @include transition(.5s ease-in-out);
+            img{
+                @include transforms(scale(1.2));
+                @include transition(.5s ease-in-out);
+            }
+        }
+        img{
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            @include transforms(scale(1));
+            @include transition(.5s ease-in-out);
+        }
+    }
+    @include media-breakpoint-down(lg){
+        .gallery{
+            height: 150px;
+        }
+    }
+    @include media-breakpoint-down(sm){
+        .col{
+            flex: 0 0 33.33%;
+            width: 33.33%;
+        }
+    }
+    @media(max-width:480px){
+        .col{
+            flex: 0 0 50%;
+            width: 50%;
+        }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.table {
+  font-size: 14px;
+  line-height: 22px;
+  border-radius: 0 0 3px 3px;
+  overflow: hidden;
+  min-width: 500px;
+  thead {
+    tr {
+      border: solid color(95);
+      border-width: 2px;
+    }
+
+    th {
+      font-family: font(sb);
+    }
+  }
+  tr {
+    border: solid color(85);
+    border-width: 2px;
+    border-top-color: transparent;
+    .price {
+      font-family: font(sb);
+      font-size: 18px;
+    }
+    .status{
+      font-size: 12px;
+      color: color(150);
+    }
+  }
+  th,
+  td {
+    padding: 16px 18px;
+    vertical-align: middle;
+    white-space: nowrap;
+    a {
+      color: color(800);
+      &.viewDetail{
+        color: color(200);
+        border-color: color(200);
+        font-size: 14px;
+        &:hover{color: color(50);}
+      }
+    }
+  }
+  .dropdown-menu {
+    font-size: 12px;
+    padding: 8px 12px;
+    line-height: 22px;
+    @include box-shadow(0, 8px, 20px, rgba($color: color(900), $alpha: 0.07));
+    .dropdown-list-item {
+      position: relative;
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba($color: color(150), $alpha: 0.05);
+        padding-bottom: 6px;
+        margin-bottom: 6px;
+      }
+      &:hover {
+        a {
+          color: color(400);
+        }
+      }
+    }
+  }
+
+  .btn {
+    min-width: 100px;
+    & + .btn {
+      margin-left: 10px;
+    }
+    @include media-breakpoint-down(md) {
+      min-width: auto;
+    }
+  }
+
+  @media (max-width: 1699px) {
+    th,
+    td {
+      padding: 14px 16px;
+    }
+    tr {
+      .price {
+        font-size: 16px;
+      }
+    }
+  }
+  @include media-breakpoint-down(xxl) {
+    th,
+    td {
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    tr {
+      .price{font-size: 14px;}
+    }
+  }
+}

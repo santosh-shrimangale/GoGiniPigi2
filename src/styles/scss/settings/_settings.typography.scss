@@ -1,0 +1,11 @@
+@include font-face(font(lt) , '#{$fonturl}/Axiforma-Light', 'normal', 'normal'); 
+@include font-face(font(rg) , '#{$fonturl}/Axiforma-Regular', 'normal', 'normal'); 
+@include font-face(font(md) , '#{$fonturl}/Axiforma-Medium', 'normal', 'normal'); 
+@include font-face(font(sb) , '#{$fonturl}/Axiforma-SemiBold', 'normal', 'normal'); 
+@include font-face(font(bd) , '#{$fonturl}/Axiforma-Bold', 'normal', 'normal');
+@include font-face(font(ex) , '#{$fonturl}/Axiforma-ExtraBold', 'normal', 'normal');
+@include font-face(font(adb) , '#{$fonturl}/AddisonBrother', 'normal', 'normal');
+@include font-face(font(bk) , '#{$fonturl}/Axiforma-Book', 'normal', 'normal');
+@include font-face(font(cr) , '#{$fonturl}/Cotta-Regular', 'normal', 'normal');
+@include font-face(font(it) , '#{$fonturl}/Axiforma-Italic', 'normal', 'normal');
+@include font-face(font(hf) , '#{$fonturl}/HolidayFreeRegular', 'normal', 'normal');

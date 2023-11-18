@@ -1,0 +1,10 @@
+export { appLanguage as profileProvider } from "./ProfileProvider/index.i18n";
+export { appLanguage as createAppointment } from "./CreateAppointment/index.i18n";
+export { appLanguage as providerBooking } from "./MyBooking/index.i18n";
+export { appLanguage as providerReview } from "./ProviderReview/index.i18n";
+export { appLanguage as myListings } from "./MyListings/index.i18n";
+export { appLanguage as myService } from "./MyService/index.i18n";
+export { appLanguage as providerPaymentDetails } from "./ProviderPaymentDetails/index.i18n";
+export { appLanguage as providerLeaveReview } from "./ProviderLeaveReview/index.i18n";
+export { appLanguage as providerMyProfile } from "./ProviderMyProfile/index.i18n";
+export { appLanguage as settings } from "./Setting/index.i18n";

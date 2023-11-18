@@ -1,0 +1,725 @@
+.availabilityPage{
+    .detailCard{
+        &_inner{
+            padding: 40px 45px;
+            background: color(50);
+            border-radius: 5px;
+        }
+        &_header{
+            border-bottom: 1px solid rgba(color(200), 0.09);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+          h1{
+            font-size: 28px;
+            line-height: 52px;
+          }
+          .filter_btn{
+            margin-right: 10px;
+            width: 32px;
+            height: 30px;
+            @include flexcenter();
+          }
+        }
+        &_body{
+            h2{font-size: 20px;line-height: 30px;}
+            p{font-size: 15px; line-height: 22px; color: color(200); margin-bottom: 10px;}
+            .optionalHead{
+                margin-bottom: 20px;
+                span{font-size: 14px; color: color(800);}
+                label{margin-bottom: 0;}
+            }
+            .form-group{
+                .form-control{
+                    height: 52px;
+                    &::placeholder{color:rgba(color(800), 0.4);}
+                    &.textarea{
+                        height: 120px; border-radius: 4px;
+                        border-color: transparent;
+                        &:focus{
+                            border-color: color(400);
+                        }
+                    }
+                }
+                .form-check{
+                    &.light{
+                        label{color: color(200); font-size: 15px; line-height: 27px; font-family: font(bk);}
+                    }
+                }
+            }
+            .uploadStuff{
+                &_multi{margin-top: 25px;}
+            }
+            .openForm-btn{
+                margin-bottom: 40px;
+               .btn{
+                padding: 10px 25px;
+               }
+            }
+
+        }
+        &_footer{
+            .form-group{
+                .form-check{
+                    label{font-size: 17px; color: color(200);}
+                    a{color: color(400); text-decoration: none;}
+                }
+            }
+            .save-btn{
+                height: 50px;
+                min-width: 176px;
+            }
+            &--booking{margin-top: 55px;}
+        }
+        &_calender{
+            max-width: 680px;
+            padding-top: 40px;
+        }
+        &_calender, .timeSlot{
+            .form-label{
+                font-size: 18px; display: flex; align-items:center;
+                em{font-size: 18px; color: color(600); margin-right: 10px;}
+            }
+        }
+
+        @media(max-width:1599px){
+            &_inner{
+                padding: 30px;
+            }
+            &_header{  
+                margin-bottom: 20px;
+                h1{
+                    font-size: 21px;
+                    line-height: 40px;
+                }
+            }
+            &_calender{
+                padding-top: 30px
+            }
+            &_calender, .timeSlot{
+                .form-label{
+                    font-size: 15px;
+                    em{font-size: 16px;margin-right: 10px;}
+                }
+            }
+            &_body{
+                h2{font-size: 18px;}
+                .openForm-btn{
+                    margin-bottom: 25px;
+                }
+                .form-group{
+                    .form-control{
+                        height: 45px;
+                        font-size: 14px;
+                        &.textarea{height: 120px;}
+                    }
+                    .input-group-append{top: 12px;em{font-size: 14px;}}
+                }
+            }
+            &_footer{
+                .save-btn{
+                    height: 45px;
+                    min-width: 145px;
+                }
+                &--booking{margin-top: 25px;}
+            }
+        }
+        @include media-breakpoint-down(xxl){
+            &_inner{
+                padding: 20px;
+            }
+            &_header{
+                h1{
+                    font-size: 18px;
+                    line-height: 34px;
+                }
+            }
+            &_body{
+                h2{font-size: 16px; line-height: 26px;}
+                .form-group{
+                    .form-check{
+                        &.light{
+                            label{font-size: 13px;}
+                        }
+                    }
+                }
+                .optionalHead{
+                    span{font-size: 12px;}
+                }
+            }
+            &_footer{
+                .form-group{
+                    .form-check{
+                        label{font-size: 15px;}
+                    }
+                }
+                .save-btn{
+                    min-width: 125px;
+                }
+            }
+        }
+        @include media-breakpoint-down(xl){
+            &_calender, .timeSlot{
+                .form-label{
+                    font-size: 14px;
+                    em{font-size: 14px;margin-right: 7px;}
+                }
+            }
+            &_inner{
+                padding: 15px;
+            }
+            &_header{
+                h1{font-size: 16px; line-height: 24px;}
+            }
+            &_body{
+                h2{font-size: 14px; line-height: 24px;}
+            }
+            &_footer{
+                .save-btn{
+                    min-width: 100px;
+                    height: 40px;
+                }
+                &--booking{margin-top: 0px;}
+            }
+        }
+        @include media-breakpoint-down(sm){
+            &_calender{
+                padding-top: 20px;
+                .form-group{margin-bottom: 0;}
+            }
+        }
+
+        // time slot
+        .timeSlot{
+            .form-label{margin-bottom: 20px;}
+            .col{
+                width: 14.28%;
+                flex: 0 0 14.28%;
+                input{
+                    display: none;
+                    ~ label{
+                        border: 1px solid rgba(color(150), 0.4); border-radius: 3px; padding: 11px; width: 100%;
+                        color:color(800); font-size: 14px; cursor:pointer; margin-bottom: 0; text-align: center;
+                        font-family: font(md);background-color: color(50);
+                    }
+                    &:checked{
+                        ~ label{
+                            color: color(50); background:color(400); border-color: color(400);
+                            span{
+                                color: color(50);
+                            }
+                        }
+                    }
+                    &:disabled{
+                        ~ label{
+                            border-color:rgba(color(150), 0.0); background:rgba(color(150), 0.3); color:color(200);
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+            @media(max-width:1599px){
+                .form-label{margin-bottom: 10px;}
+            }
+            @include media-breakpoint-down(xxl){
+                .col{
+                    width: 16.6%;
+                    flex: 0 0 16.6%;
+                }
+            }
+            @include media-breakpoint-down(xl){
+                .col{
+                    input{
+                        ~ label{
+                            padding: 8px; 
+                            font-size: 12px; 
+                        }
+                    }
+                }
+            }
+            @include media-breakpoint-down(sm){
+                margin-top: 15px;
+                .col{
+                    width:20%;
+                    flex: 0 0 20%;
+                }
+            }
+            @media(max-width:480px){
+                .col{
+                    width:33.33%;
+                    flex: 0 0 33.33%;
+                }
+            }
+        }
+    }
+
+    // beautyPannel
+    .beautyPannel{
+        .card{
+            background: color(50);
+            padding: 20px;
+            border-radius: 3px;
+            position: sticky;
+            @include transition(0.3s);
+            top: 20px;
+            &_img{
+                overflow: hidden;
+                border-radius: 3px;
+                position: relative;
+                height: 265px;
+                &:before{
+                    content:'';
+                    position: absolute;
+                    bottom: 0;
+                    right:0; 
+                    background-image: linear-gradient(180deg, rgba($color: color(900), $alpha: 0.0), rgba($color: color(900), $alpha: 0.30), rgba($color: color(900), $alpha: 0.80));
+                    width: 100%;
+                    height: 120px;
+                    z-index: 1;
+                }
+                &:hover{
+                    @include transition(.5s ease-in-out);
+                    img{
+                        @include transforms(scale(1.2));
+                        @include transition(.5s ease-in-out);
+                    }
+                }
+                img{ 
+                    width: 100%;
+                    border-radius: 3px;
+                    height: 100%;
+                    object-fit: cover;
+                    @include transforms(scale(1));
+                    @include transition(.5s ease-in-out);
+                }
+                .label{
+                    font-family: font(md);
+                    font-size: 16px;
+                    padding: 0 0 17px 20px;
+                    bottom: 0;
+                    z-index: 2;
+                    color: color(50);
+                    span{
+                        background: color(600);
+                        border-radius: 25px;
+                        color:color(50);
+                        font-family: font(lt);
+                        display: inline-block;
+                        padding: 5px 15px;
+                        font-size: 12px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+            &_txt{
+                h3{
+                    font-size: 24px;
+                    line-height: 35px;
+                    margin:24px 0 8px;
+                    color: color(800);
+                    @include text-clamp(2);
+                    a{
+                        color: color(800);
+                        &:hover{
+                            color: color(400);
+                        }
+                    }
+                }
+                .location{
+                    font-size: 14px;
+                    color: color(200);
+                    em{
+                        color: color(600);
+                        font-size: 13px;
+                        font-weight: 700;     
+                        margin-right: 6px;               
+                    }
+                }
+            }
+            .availability{
+                padding: 20px 0;
+                h4{
+                    font-size: 39px;
+                }
+                sub{
+                    font-size: 30px;
+                    text-decoration-line: line-through;
+                    font-family: font(sb);
+                    color: color(400);
+                    bottom: -0.17rem;
+                    margin-left: 7px;
+                }
+            }
+            .listing{
+                margin-bottom: 25px;
+                li{
+                    &:not(:last-child){
+                        border-right: 1px solid #DFDFDF;
+                        padding-right: 15px;
+                        margin-right: 15px;
+                    }
+                    label{font-size: 18px; font-family: font(md); color: color(800); height: 35px;}
+                    em{font-size: 19px; margin-right: 15px;color: color(600)}
+                   p{font-size:13px;color: color(200); margin-bottom: 0;}
+                }
+            }
+            &_user{
+                background: rgba(color(150), 0.06);
+                border-radius: 5px;
+                padding: 22px 25px;
+                &_profile{
+                    width: 80px;
+                    height: 80px;
+                    border: 1px solid color(600);
+                    border-radius: 50%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                &_info{
+                    padding-left: 20px;
+                    flex: 1;
+                    h4{
+                        font-size: 18px; line-height: 33px;
+                        @include text-clamp(2);
+                        a{
+                            color: color(800);
+                            &:hover, &:focus{
+                              color: color(400);
+                            }
+                          }
+                    }
+                    h5{font-size: 14px; color: color(600);}
+                    p{font-size: 14px; line-height: 18px; font-family: font(lt); margin-bottom: 0; @include text-clamp(2);}
+                }
+            }
+            @media(max-width:1599px){
+                &_txt{
+                    h3{
+                        font-size: 18px;
+                        line-height: 28px;
+                        margin: 15px 0 8px;
+                    }
+                }
+                &_img{
+                    .label{
+                        p{font-size: 15px;}
+                    }
+                }
+                &_user{
+                    &_profile{
+                        width: 58px;
+                        height: 58px;
+                    }
+                }
+                .availability {
+                    h4{font-size: 28px;}
+                    sub{font-size: 24px;}
+                }
+            }
+            @include media-breakpoint-down(xxl){
+                .availability {
+                    h4{font-size: 21px;}
+                    sub{font-size: 18px;}
+                } 
+                &_txt{
+                    h3{
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+                &_user{
+                    padding: 15px;
+                    &_info{
+                        h4{
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+                .listing {
+                    margin-bottom: 15px;
+                    li{
+                        label{
+                            font-size: 15px;
+                        }
+                        em{
+                            font-size: 16px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+            @include media-breakpoint-down(xl){
+                padding: 15px;
+                &_txt{
+                    .location{
+                        font-size: 12px;
+                        em{font-size: 12px;}
+                    }
+                }
+                &_img{
+                    height: 200px;
+                    .label{
+                        padding: 0 0 15px 15px;
+                        p{font-size: 14px;}
+                    }
+                }
+                &_user{
+                    &_info{
+                        padding-left: 15px;
+                        h5, p{font-size: 13px;}
+                    }
+                    &_profile{
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+                .availability{
+                    padding: 15px 0;
+                    h4{
+                        font-size: 18px;
+                    }
+                    sub{
+                        font-size: 16px;
+                    }
+                }
+                .listing {
+                    li{
+                        &:not(:last-child){
+                            padding-right: 10px;
+                            margin-right: 10px;
+                        }
+                       p{font-size: 12px;}
+                    }
+                }
+            }
+            @include media-breakpoint-down(lg){
+                .listing {
+                    li{
+                        width: 100%;
+                        @include flexbetween(both);
+                        &:not(:last-child){
+                            border-bottom: 1px solid color(85);
+                            padding: 0 0 5px 0;
+                            margin: 0 0 5px 0;
+                            border-right: 0;
+                        }
+                    }
+                }
+                &_user{
+                    &_info{
+                      h4{margin-bottom: 4px;}
+                    }
+                    &_profile{
+                        width: 42px;
+                        height: 42px;
+                    }
+                }
+            }
+        }
+    }
+
+    // paymentOption
+    .paymentOption{
+        h4{
+            font-size: 18px;
+            line-height: 28px;
+            margin-bottom: 15px;
+            span{
+                color: color(200);
+            }
+        }
+        p{
+            font-size: 16px;
+            line-height: 28px;
+            margin-bottom: 0;
+        }
+        &_title{
+            margin: 30px 0;
+           h3{
+            font-size: 20px;
+            line-height: 30px;
+           }
+           span{font-size: 18px; color: color(200);}
+        }
+        .form-group{
+            .form-label{font-size: 16px; color: color(200); font-family: font(rg);}
+        }
+        &_list{
+            background: color(55);
+            border-radius: 5px;
+            padding: 25px;
+            margin-top: 20px;
+            p{font-size: 14px; line-height: 25px; font-family: font(bk); max-width: 695px;}
+            .form-check{margin-right: 7px;}
+            input[type="radio"] {
+                &:checked {
+                  border-color: color(400);
+                  background-color: color(400);
+                }
+            }
+        }
+        &_summary{
+            li{
+                font-size: 18px;
+                color: color(200);
+                &.discount{
+                    label{
+                        color:color(400);
+                    }
+                }
+               &+li{padding-top: 20px;}
+                &:last-child{padding-top: 25px; font-family: font(md); color: color(800);}
+            }
+        }
+        &_cardDetail{
+            .cardIco{
+               input{padding-left: 70px;}
+               em{
+                    font-size: 25px;
+                    top: 0;
+                    left: 0;
+                    width: 70px;
+                    height: 100%;
+                    color: rgba(color(150), 0.3);
+                    @include flexcenter();
+                }
+            }
+        }
+        .promoCode{
+            &_label{
+                position: absolute;
+                border-left: 1px solid rgba(color(180), 0.09);
+                padding-left: 45px;
+                .form-label{font-family: font(sb); color: color(800);}
+            }
+            .varified{
+                input{padding-right: 50px;}
+                .ico{
+                    background-color: color(400);
+                    width: 22px;
+                    height: 22px;
+                    font-size: 8px;
+                    color: color(50);
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 15px;
+                    right: 20px;
+                }
+            }
+        }
+        @media(max-width:1599px){
+            &_title{
+                margin: 20px 0;
+               h3{
+                font-size: 16px;
+                line-height: 24px;
+               }
+               span{font-size: 16px;}
+            }
+            h4{
+                font-size: 15px;
+                line-height: 24px;
+            }
+            .form-group{
+                .form-label{
+                    font-size: 14px;
+                }
+            }
+            .promoCode{
+                .varified{
+                    .ico{
+                        width: 20px;
+                        height: 20px;
+                        top: 12px;
+                        right: 15px;
+                        font-size: 6px;
+                    }
+                }
+            }
+            &_summary{
+                li{
+                    font-size: 16px;
+                    &:last-child{padding-top: 20px;}
+                    &+li{padding-top: 15px;}
+                }
+            }
+        }
+        @include media-breakpoint-down(xxl){
+            p{
+                font-size: 13px;
+                line-height: 24px;
+            }
+            h4{
+                font-size: 14px;
+            }
+            &_title{
+                margin: 15px 0;
+               h3{
+                font-size: 15px;
+               }
+               span{font-size: 14px;}
+            }
+            &_list{
+                padding: 15px;
+                margin-top: 15px;
+                .form-check {
+                    margin-right: 0px;
+                }
+            }
+            &_summary{
+                li{
+                    font-size: 14px;
+                }
+            }
+            &_cardDetail{
+                .cardIco{
+                   input{padding-left: 55px;}
+                   em{
+                        font-size: 20px;
+                        width: 55px;
+                    }
+                }
+            }
+            .promoCode{
+                &_label{padding-left: 30px;}
+            }
+        }
+        @include media-breakpoint-down(md){
+            h4{
+                font-size: 14px;
+            }
+            .promoCode{
+                &_label{padding-left: 13px; border-left: 0;margin-top: 10px;}
+            }
+        }
+    }
+    @media(max-width:1499px){
+        .detailCard{
+            width: 60%;
+        }
+        .beautyPannel{
+            width: 40%;
+        }
+    }
+    @include media-breakpoint-down(lg){
+        .detailCard{
+            width: 100%;
+        }
+        .beautyPannel{
+            width: 300px;
+            position: fixed;
+            top: 0;
+            right: -300px;
+            height: 100%;
+            z-index: 6;
+            margin: 0;
+            padding: 0;
+            @include transition(0.4s);
+            &_open{right: 0; @include transition(0.4s);}
+            .card{height: 100%; border-radius: 0;}
+        }
+    }
+}

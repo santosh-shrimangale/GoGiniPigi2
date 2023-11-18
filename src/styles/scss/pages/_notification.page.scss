@@ -1,0 +1,98 @@
+.notification{
+  background-image: url("#{$imageurl}/notification-banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  &_inner{
+    &_box{flex: 1;}
+    padding: 40px 30px 50px;
+    border-radius: 3px;
+    max-width: 1136px;
+    margin: 0 auto;
+    // height: 100vh;
+    h1{
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: color(850);
+    }
+  }
+  &_item{
+    border-bottom: 1px solid color(110);
+    @include transition(all 0.4s);
+    padding: 20px;
+    border-radius: 3px;
+    &:hover, &.noRead{
+      background-color: color(110);
+    }
+    img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border:1px solid color(600);
+      object-fit: cover;
+      overflow: hidden;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    &_heading{
+      margin-bottom: 5px;
+      a{color:color(800)}
+    }
+    &_content, &_time{
+      font-size: 14px;
+      font-family: font(bk);
+    }
+    &_content{color: color(200);}
+    &_time{
+      color: color(800);
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  }
+  @media(max-width:1599px){
+    &_item{padding: 15px;
+      &_time{right: 15px;top: 15px;}
+    }
+    &_inner{padding: 30px;}
+  }
+  @include media-breakpoint-down(xxl){
+    &_item{
+      &_content,&_time{font-size: 13px;}
+      &_heading{
+        a{font-size: 15px;}
+      }
+    }
+    &_inner{h1{font-size: 18px; margin-bottom: 10px;}}
+  }
+  @include media-breakpoint-down(xl){
+    &_inner{padding: 25px;}
+    &_item{
+      img{width: 45px; height: 45px; margin-right: 10px;}
+      &_heading{margin-bottom: 0px;}
+    }
+  }
+  @include media-breakpoint-down(lg){
+    &_item{
+      padding: 10px;
+      &_time{right: 0px;top: 10px;}
+  }
+  }
+  @include media-breakpoint-down(md){
+    &_inner{padding: 20px;}
+    &_item{
+      img{width: 40px; height: 40px;}
+      &_heading{line-height: 15px;margin-bottom: 5px;
+        a{font-size: 14px;}}
+      &_content,&_time{font-size: 12px;}
+      &_content{display: block; line-height: 17px;}
+    }
+    &_inner{h1{font-size: 16px;}}
+  }
+  @include media-breakpoint-down(sm){
+    &_item{
+      .media-body{width: 100%;}
+      &_time{position: relative; top: 5px;}
+    }
+  }
+}

@@ -1,0 +1,213 @@
+.gridBox{
+    margin-bottom: 20px;
+    .card{
+        background: color(50);
+        padding: 11px 11px 18px;
+        border-radius: 3px;
+        border: 1px solid transparent;
+        @include transition(0.5s);
+        &:hover{
+          border-color: color(600);
+          @include transition(0.5s);
+          transform: translateY(-2px);
+        }
+        &_img{
+            overflow: hidden;
+            height: 255px;
+            border-radius: 3px;
+            &:hover{
+                @include transition(.5s ease-in-out);
+                img{
+                    @include transforms(scale(1.2));
+                    @include transition(.5s ease-in-out);
+                }
+            }
+            img{ 
+                border-radius: 3px;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                @include transforms(scale(1));
+                @include transition(.5s ease-in-out);
+            }
+        }
+        &_label{
+            font-family: font(lt);
+            font-size: 15px;
+            padding: 20px 0 15px;
+            position: relative;
+            p{
+                @include flexcenter(y);
+                flex-wrap: wrap;
+                padding-right: 20px;
+            }
+            span {
+                background: color(600);
+                border-radius: 25px;
+                color: color(50);
+                display: inline-block;
+                padding: 5px 15px;
+                font-size: 12px;
+                margin: 0 10px 5px 0;
+                &.instant{
+                  background: #FFD1E3;
+                  color: color(400);
+                  @include flexcenter(y);
+                  em{margin-right: 5px;}
+                }
+            }
+            .liked{
+                color: color(400);
+                font-size: 21px;
+                position: absolute;
+                right: 0;
+                top: 24px;
+                &.yup{
+                    em{
+                        &:before{ content: "\e916";}
+                    }
+                }
+            }
+        }
+        &_txt{
+            h3{
+                font-size: 18px;
+                line-height: 28px;
+                margin: 0;
+                @include text-clamp(2);
+                a{
+                    color: color(800);
+                    &:hover{
+                        color: color(400);
+                    }
+                }
+            }
+            p{
+                font-size: 13px;
+                line-height: 23px;
+                font-family: font(bk);
+                color: color(200);
+                margin: 7px 0;
+                @include text-clamp(2);
+            }
+            .listing{
+                li{
+                    font-size: 14px;
+                    font-family: font(lt);
+                    &:not(:last-child){margin-right: 10px;}
+                    em{
+                        color: color(600);
+                        margin-right: 8px;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+        .availability{
+            padding: 14px 0;
+            sub{
+                text-decoration-line: line-through;
+                font-family: font(sb);
+                color: color(400);
+                bottom: -0.17rem;
+                margin-left: 7px;
+            }
+            .btn{font-size: 14px; height: 40px;padding: 10px 13px;}
+        }
+        &_user{
+            background: rgba(color(150), 0.06);
+            border-radius: 5px;
+            padding: 15px;
+            &_profile{
+                width: 58px;
+                height: 58px;
+                border: 1px solid color(600);
+                border-radius: 50%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &_info{
+                padding-left: 20px;
+                flex: 1;
+                h4{
+                    font-size: 15px;
+                    @include text-clamp(2);
+                    a{
+                        color: color(800);
+                        &:hover, &:focus{
+                          color: color(400);
+                        }
+                      }
+                }
+                h5{font-size: 12px; color: color(600);}
+                p{font-size: 12px; line-height: 18px; font-family: font(lt); margin-bottom: 0; @include text-clamp(2);}
+            }
+          
+            .ratings{
+                margin: 10px 0;
+                em{font-size: 13px;}
+                li{margin-right: 5px; color: color(600);}
+                &_count{font-size: 12px; color: color(200);}
+            }
+        }
+        @include media-breakpoint-down(xxl){
+            &_txt{
+                h3{
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+            &_label{
+                .liked{font-size: 16px;}
+            }
+            &_user{
+                &_profile{
+                    width: 48px;
+                    height: 48px;
+                }
+                &_info{
+                    padding-left: 15px;
+                }
+            }
+            &_img{
+                height: 225px;
+            }
+            .availability{
+                h4 {
+                    font-size: 18px;
+                }
+                .btn {
+                    font-size: 13px;
+                    height: 36px;
+                    padding: 10px;
+                }
+            }
+        }
+        @include media-breakpoint-down(lg){
+            &_img{
+                height: 195px;
+            }
+            &_label{
+                span{
+                    padding: 3px 10px;
+                    font-size: 12px;
+                    margin-right: 4px;
+                }
+            }
+        }
+        @include media-breakpoint-down(sm){
+            &_label{
+                padding: 15px 0 15px;
+            }
+            .availability{
+                h4 {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+

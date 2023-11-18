@@ -1,0 +1,82 @@
+
+.pageBanner{
+    background-image: url("#{$imageurl}/page-banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    &:after{
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-image: url("#{$imageurl}/banner-pettern.png");
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        background-position: right bottom;
+    }    
+    .commonhead,nav{
+        position: relative;
+        z-index: 1;
+    }
+    .commonhead{
+        padding: 40px 0 150px 0;       
+    }
+    &-small{
+        background-image: url("#{$imageurl}/privacy-policy-banner.png");
+        &:after{
+            background-image: url("#{$imageurl}/cms-banner-pettern.png");    
+        }        
+    }
+    &_img{z-index: 1;}   
+    @media(max-width:1599px){        
+        .commonhead{
+            padding-bottom: 120px;
+        }
+    }
+    @include media-breakpoint-up(xxl){        
+        &:after{
+            background-size: 40%;
+        }
+        &-small{
+            .commonhead{
+                padding: 25px 0 40px 0;
+            }
+            &:after{
+                background-size: contain;
+            }
+        }
+    }
+    @include media-breakpoint-down(xxl){   
+        &:after{
+            background-size: contain;
+        }
+        .commonhead{
+            padding: 5px 0 80px;
+            &-small{
+                padding-bottom: 40px;
+            }
+        }     
+        &-small{
+            .commonhead{
+                padding:0px 0px 20px;
+            }
+        }
+    }
+    @include media-breakpoint-down(lg){        
+        .commonhead{
+            padding: 10px 0 65px 0;
+            &-small{
+                padding-bottom: 30px;
+            }
+            p{
+                font-size: 14px; line-height: 16px;margin-top: 4px;
+            }
+        }
+        &-small{.commonhead{padding: 15px 0 25px 0;}}
+    }
+    @include media-breakpoint-down(md){
+        .commonhead{p{font-size: 13px; line-height: 18px;}}
+        &-small{.commonhead{padding: 10px 0 20px 0;}}
+    }  
+}

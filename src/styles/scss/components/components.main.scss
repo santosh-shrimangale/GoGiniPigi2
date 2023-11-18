@@ -1,0 +1,32 @@
+//layout
+@import "layout/layout.header";
+@import "layout/layout.footer";
+
+//modal
+@import "components.modal.scss";
+
+//Component
+@import "component.icomoon";
+@import "components.button";
+@import "components.form";
+@import "components.select2";
+@import "components.commonhead";
+@import "components.browzing";
+@import "components.feedback";
+@import "components.page.banner";
+@import "components.sidebar";
+@import "components.filter";
+@import "components.beauty.box";
+@import "components.grid.box-view";
+@import "components.table";
+@import "components.pagination";
+@import "components.profile-card";
+@import "component.accordion";
+@import "components.common.treat";
+@import "components.faqsidebar";
+@import "components.jqueryui-datepicker";
+@import "./component.toastr";
+
+// detail page component
+@import "components.portfolio";
+@import "components.review-list";

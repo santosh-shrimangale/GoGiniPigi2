@@ -1,0 +1,60 @@
+//path
+$imageurl: "./../../images";
+$footerimageurl: "./../../../images";
+$fonturl: "./../../fonts";
+
+// color variables
+$colors: (
+  50: #ffffff,
+  55: #f7f7f7,
+  60: #f8f8f8,
+  65: #fffcfd,
+  70: #f9efe8,
+  75: #E9E9EC,
+  80: #dbdbdb,
+  90: #d2d2d2,
+  85: #F3F2EF,
+  95: #FCF7F3,
+  100: #bdbdbd,
+  110: #F4F4F5,
+  150: #92929e,
+  180: #707070,
+  200: #676767,
+  300: #39393c,
+  350: #FBD9E6,
+  400: #ea4c89,
+  500: #fe0000,
+  600: #d4af37,
+  650: #B78C02,
+  750: #12AF00,
+  800: #232323,
+  850: #141414,
+  900: #000000,
+);
+
+@function color($color-name, $color-variant: null) {
+  @if ($color-variant != null) {
+    // map inception
+    @return map-get(map-get($colors, $color-name), $color-variant);
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+}
+
+// Fonts Variables
+$font: (
+  lt: "Axiforma-Light",
+  rg: "Axiforma-Regular",
+  md: "Axiforma-Medium",
+  sb: "Axiforma-SemiBold",
+  bd: "Axiforma-Bold",
+  ex: "Axiforma-ExtraBold",
+  adb: "AddisonBrother",
+  bk: "Axiforma-Book",
+  cr: "Cotta-Regular",
+  it: "Axiforma-Italic",
+  hf: "HolidayFree",
+);
+@function font($font-name) {
+  @return map-get($font, $font-name);
+}

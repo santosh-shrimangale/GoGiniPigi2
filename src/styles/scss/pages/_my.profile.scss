@@ -1,0 +1,526 @@
+.myProfile {
+  width: calc(100% - 244px);
+  margin-left: 25px;
+  &_card {
+    width: 100%;
+    padding: 30px 40px;
+    margin-bottom: 20px;
+    height: auto;
+    min-height: auto;
+    &_profile {
+      width: 107px;
+      height: 107px;
+      border: 2px solid color(600);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &_data {
+      padding-left: 30px;
+      flex: 1;
+      h1 {
+        font-size: 20px;
+        color: color(800);
+        font-family: font(sb);
+      }
+      ul {
+        margin: 10px 0 0 0;
+      }
+      li {
+        font-size: 17px;
+        color: color(200);
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+        em {
+          color: color(600);
+          margin-right: 8px;
+          font-size: 15px;
+        }
+      }
+    }
+    .action {
+      min-width: 130px;
+    }
+    .uploadStuff {
+      @media (min-width: 1600px) {
+        &_upload,
+        &_img {
+          height: 200px;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 1599px) {
+        &_upload,
+        &_img {
+          height: 160px;
+        }
+      }
+      @media (min-width: 376px) and (max-width: 767px) {
+        &_upload,
+        &_img {
+          height: 180px;
+        }
+      }
+    }
+  }
+  .beautyBox {
+    &-profile {
+      $parent: "beautyBox";
+      .#{$parent}_detail {
+        h3 {
+          margin: 15px 0 5px;
+        }
+        .left {
+          &::after {
+            content: "";
+            display: none;
+          }
+          .perks {
+            &-talent {
+              margin: 10px 0 10px;
+            }
+          }
+        }
+      }
+      @include media-breakpoint-up(xxl) {
+        .#{$parent}_img {
+          height: 200px;
+        }
+        .#{$parent}_detail {
+          .left {
+            .perks {
+              margin: 15px 0 15px;
+            }
+          }
+        }
+      }
+      @include media-breakpoint-up(md) {
+        .#{$parent}_img {
+          &-talent {
+            height: 142px;
+          }
+        }
+      }
+    }
+  }
+  .beautyTitle {
+    margin-bottom: 15px;
+    h2 {
+      font-size: 16px;
+      font-family: font(sb);
+      color: color(800);
+    }
+    .listToggle {
+      height: 29px;
+      padding: 5px 8px;
+    }
+  }
+  &_reviews {
+    margin: 0 -10px;
+    h3 {
+      font-size: 16px;
+      color: color(800);
+    }
+    &_col {
+      flex: 0 0 20%;
+      max-width: 20%;
+      padding: 0 10px;
+    }
+    span {
+      color: color(200);
+      &.active {
+        color: color(600);
+      }
+    }
+    .rating {
+      padding: 15px;
+      width: 162px;
+      height: 60px;
+      border-radius: 3px;
+      font-size: 30px;
+      font-family: font(bk);
+      background-color: color(95);
+      color: color(400);
+      img {
+        margin-right: 20px;
+        width: 23px;
+      }
+    }
+  }
+  &_talent {
+    .sideBar {
+      border-radius: 3px;
+      li {
+        a {
+          font-size: 16px;
+          padding-left: 55px;
+        }
+        .svg {
+          width: 31px;
+          height: 31px;
+        }
+      }
+    }
+  }
+  &_catedetails {
+    padding-left: 15px;
+    .beautyBox-profile {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .addnew {
+    font-size: 14px;
+  }
+  .reviewnote {
+    font-size: 13px;
+    margin-top: 25px;
+  }
+  @media (max-width: 1699px) {
+    &_card {
+      padding: 30px;
+      &_profile {
+        width: 85px;
+        height: 85px;
+      }
+      &_data {
+        padding-left: 20px;
+        h1 {
+          font-size: 18px;
+        }
+        li {
+          font-size: 15px;
+          &:not(:last-child) {
+            margin-right: 20px;
+          }
+          em {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+    &_reviews {
+      .rating {
+        width: 140px;
+        height: 45px;
+        font-size: 20px;
+        img {
+          width: 20px;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1599px) {
+    margin-left: 20px;
+    &_talent {
+      .sideBar {
+        li {
+          .svg {
+            width: 21px;
+            height: 21px;
+          }
+          a {
+            font-size: 14px;
+            padding-left: 45px;
+          }
+        }
+      }
+    }
+    &_reviews {
+      .rating {
+        width: auto;
+        font-size: 16px;
+        img {
+          width: 18px;
+        }
+      }
+      h3 {
+        font-size: 13px;
+      }
+      span {
+        font-size: 13px;
+      }
+    }
+  }
+  @media (max-width: 1399px) {
+    width: calc(100% - 210px);
+  }
+  @include media-breakpoint-down(xxl) {
+    &_card {
+      padding: 20px;
+      &_profile {
+        width: 75px;
+        height: 75px;
+      }
+      &_data {
+        padding-left: 15px;
+        h1 {
+          font-size: 16px;
+        }
+        li {
+          font-size: 13px;
+          &:not(:last-child) {
+            margin-right: 15px;
+          }
+          em {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(xl) {
+    margin-left: 15px;
+    &_card {
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+    margin-left: 0;
+    &_card {
+      &_data {
+        padding-left: 10px;
+        h1 {
+          font-size: 15px;
+        }
+      }
+    }
+    &_catedetails {
+      padding-left: 0;
+      .beautyBox-profile {
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &_card {
+      position: relative;
+      &_profile {
+        margin: 30px auto 10px;
+      }
+      &_data {
+        text-align: center;
+        ul {
+          justify-content: center;
+        }
+        li {
+          &:not(:last-child) {
+            margin-right: 10px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+      .action {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+    }
+    &_reviews {
+      &_col {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 10px;
+        @include flexbetween(both);
+        &:not(:last-child) {
+          padding-bottom: 15px;
+        }
+      }
+      h3 {
+        margin-bottom: 0;
+        flex: 1;
+      }
+      .rating {
+        height: 37px;
+        img {
+          width: 14px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  .myLikes {
+    &_items {
+      @include transition(0.5s);
+      // &:hover{
+      //   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+      //   @include transition(0.5s);
+      //   @include transforms(translateY(-2px));
+      // }
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+      .beautyBox_img {
+        border-radius: 0;
+        img {
+          border-radius: 0;
+        }
+        height: 235px;
+      }
+      .beautyBox_detail {
+        padding-left: 40px;
+        .label {
+          font-family: font(rg);
+          font-size: 16px;
+          span {
+            font-family: font(lt);
+          }
+        }
+        h3 {
+          margin: 25px 0 18px;
+          font-size: 24px;
+        }
+        p {
+          font-size: 16px;
+          font-family: font(rg);
+        }
+        .liked {
+          top: 0;
+          right: 0;
+          color: color(400);
+          font-size: 21px;
+          span {
+            font-size: 16px;
+            font-family: font(rg);
+            padding-left: 8px;
+          }
+          &.yup {
+            em {
+              &:before {
+                content: "\e916";
+              }
+            }
+          }
+        }
+        .perks {
+          li {
+            font-size: 16px;
+            font-family: font(rg);
+          }
+          span {
+            display: block;
+            font-size: 28px;
+            font-family: font(bd);
+            color: color(800);
+          }
+          em {
+            font-size: 22px;
+            padding-right: 12px;
+          }
+        }
+      }
+      @media (max-width: 1699px) {
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+        .beautyBox_img {
+          height: 200px;
+        }
+        .beautyBox_detail {
+          padding-left: 25px;
+          h3 {
+            font-size: 18px;
+            line-height: 28px;
+            margin: 20px 0 15px;
+          }
+          p {
+            font-size: 13px;
+            line-height: 23px;
+          }
+          .perks {
+            li {
+              font-size: 14px;
+            }
+            em {
+              margin-right: 8px;
+              font-size: 15px;
+            }
+            span {
+              font-size: 22px;
+            }
+          }
+          .liked {
+            span {
+              font-size: 14px;
+            }
+            em {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      @media (max-width: 1599px) {
+        .beautyBox_img {
+          height: 185px;
+        }
+        .beautyBox_detail {
+          padding-left: 20px;
+          h3 {
+            font-size: 16px;
+            line-height: 24px;
+            margin: 15px 0 10px;
+          }
+          p {
+            font-size: 13px;
+            line-height: 23px;
+          }
+          .perks {
+            li {
+              font-size: 14px;
+            }
+            em {
+              margin-right: 8px;
+              font-size: 15px;
+            }
+            span {
+              font-size: 22px;
+            }
+          }
+          .liked {
+            span {
+              font-size: 14px;
+            }
+            em {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      @include media-breakpoint-down(lg) {
+        box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+        .beautyBox_img {
+          height: 380px;
+        }
+        .beautyBox_detail {
+          padding-left: 0;
+          .perks {
+            span {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+      @include media-breakpoint-down(md) {
+        .beautyBox_img {
+          height: 300px;
+        }
+      }
+      @media (max-width: 480px) {
+        .beautyBox_img {
+          height: 230px;
+        }
+      }
+    }
+  }
+}

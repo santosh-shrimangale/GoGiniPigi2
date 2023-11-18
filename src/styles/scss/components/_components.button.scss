@@ -1,0 +1,171 @@
+.btn {
+  cursor: pointer;
+  font-size: 15px;
+  height: 45px;
+  border-radius: 3px;
+  padding: 10px 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  @include transition(all 0.4s);
+  &:hover,
+  &:focus,
+  &:active,
+  &:not(:disabled):not(.disabled):active {
+    box-shadow: none !important;
+    outline: none;
+  }
+  //Btn color
+  &-primary {
+    color: color(50);
+    border-color: color(400);
+    background-color: color(400);
+    &:hover,
+    &:focus,
+    &:active,
+    &:not(:disabled):not(.disabled):active {
+      border-color: darken(color(400), 8%);
+      background: darken(color(400), 8%);
+      color: color(50);
+    }
+    &.disabled,&:disabled{
+      background-color: #E9E9E9;
+      color:color(150);
+      border-color:#E9E9E9;
+      opacity: 1;
+    }
+  }
+  &-secondary{
+    color: color(800);
+    border-color: color(75);
+    background-color: color(75);
+    &:hover,
+    &:focus,
+    &:active,
+    &:not(:disabled):not(.disabled):active {
+      border-color: darken(color(75), 8%);
+      background: darken(color(75), 8%);
+      color: color(800);
+    }
+  }
+  &-yellow {
+    color: color(50);
+    border-color: color(600);
+    background-color: color(600);
+    &:hover,
+    &:focus,
+    &:active,
+    &:not(:disabled):not(.disabled):active {
+      border-color: darken(color(600), 8%);
+      background: darken(color(600), 8%);
+      color: color(50);
+    }
+  }
+  &-light {
+    color: color(400);
+    border-color: color(50);
+    background-color: color(50);
+    padding: 10px 20px;
+    &:hover,
+    &:focus,
+    &:active,
+    &:not(:disabled):not(.disabled):active {
+      color: color(400);
+      border-color: darken(color(50), 8%);
+      background: darken(color(50), 8%);
+    }
+  }
+  &-dark {
+    color: color(800);
+    border-color: color(60);
+    background-color: color(60);
+    padding: 10px 20px;
+    &:hover,
+    &:focus,
+    &:active,
+    &:not(:disabled):not(.disabled):active {
+      color: color(800);
+      border-color: darken(color(60), 8%);
+      background: darken(color(60), 8%);
+    }
+  }
+  &-outline-primary {
+    color: color(400);
+    background-color: color(60);
+    border: 1px solid color(400);
+    &:hover,
+    &:focus,
+    &:active,
+    &:not(:disabled):not(.disabled):active {
+      border-color: darken(color(400), 8%);
+      background: darken(color(400), 8%);
+      color: color(50);
+    }
+  }
+  &-outline-warning {
+    color: color(600);
+    background-color: color(60);
+    border: 1px solid color(600);
+    &:hover,
+    &:focus,
+    &:active,
+    &:not(:disabled):not(.disabled):active {
+      border-color: darken(color(600), 8%);
+      background: darken(color(600), 8%);
+      color: color(50);
+    }
+  }
+  //Btn size
+  &-sm {
+    height: 40px;
+  }
+  &-lg {
+    height: 50px;
+  }
+  &-shadow {
+    @include box-shadow(0px, 6px, 20px, rgba($color: color(400), $alpha: 0.5));
+  }
+  &.w-170{
+    min-width: 170px;
+    @media (max-width:1499px){
+      min-width: 150px;
+    }
+    @include media-breakpoint-down(md){
+      min-width: auto;
+    }
+  }
+  &.w-160{
+    min-width: 160px;
+    @media (max-width:1499px){
+      min-width: 140px;
+    }
+  }
+  &.w-140{
+    min-width: 140px;
+    @media (max-width:1499px){
+      min-width: 120px;
+    }
+  }
+  &.w-120{
+    min-width: 120px;
+    @media (max-width:1499px){
+      min-width: 100px;
+    }
+  }
+  @include media-breakpoint-between(lg,xxl) {
+    &-lg {
+      height: 45px;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    font-size: 14px;
+    padding: 5px 12px;
+    height: 40px;
+    &-lg {
+      height: 42px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 13px;
+  }
+}

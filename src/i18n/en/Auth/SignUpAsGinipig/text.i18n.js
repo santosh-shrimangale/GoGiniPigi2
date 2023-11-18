@@ -1,0 +1,17 @@
+export const text = {
+  signup: "Sign Up",
+  title: "Register As A GiniPig",
+  firstName: "First Name",
+  lastName: "Last Name",
+  mobno: "Mobile Number",
+  email: "Email",
+  password: "Password",
+  confirmPassword: "Confirm Password",
+  getReady: "Get ready to spoil yourself!",
+  firstNamePlaceholder: "Enter your first name",
+  lastNamePlaceholder: "Enter your last name",
+  mobnoPlaceholder: "Enter your mobile number",
+  emailPlaceholder: "Enter your Email",
+  passwordPlaceholder: "Enter your Password",
+  confirmPasswordPlaceholder: "Enter your confirm password",
+};

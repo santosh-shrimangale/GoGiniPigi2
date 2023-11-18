@@ -1,0 +1,180 @@
+.paymentSec {
+  &_left {
+    width: calc(100% - 280px);
+    padding-right: 25px;
+    border-right: 1px solid color(85);
+    margin-bottom: 40px;
+  }
+  &_card {
+    padding: 20px 25px;
+    margin: 12px 0;
+    background: linear-gradient(250deg, #002333 0%, #395460 100%);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &_bg {
+      position: absolute;
+      right: 0;
+      max-width: 100%;
+      &-mastercard {
+        bottom: -20px;
+      }
+      &-visa {
+        bottom: 0px;
+      }
+    }
+
+    &_info {
+      span {
+        font-size: 12px;
+        line-height: 21px;
+      }
+    }
+
+    &_pin {
+      font-size: 19px;
+      margin: 15px 0 10px;
+      span {
+        &:not(:last-child) {
+          margin-right: 25px;
+        }
+      }
+    }
+    h2 {
+      font-size: 19px;
+      line-height: 24px;
+    }
+    .deletebtn {
+      color: color(50);
+      position: absolute;
+      right: 25px;
+      top: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      opacity: 0;
+      &:hover {
+        color: color(400);
+      }
+    }
+    &:hover {
+      .deletebtn {
+        opacity: 1;
+      }
+    }
+  }
+  &_right {
+    width: 280px;
+    flex-shrink: 0;
+    padding-left: 25px;
+    margin-bottom: 40px;
+    .cardNumber {
+      padding-right: 40px;
+    }
+    button {
+      width: 100%;
+    }
+  }
+  .input-group {
+    .icon {
+      color: rgba($color: color(150), $alpha: 0.3);
+    }
+  }
+  .imgRecipient {
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  .input-group-append {
+    z-index: 100;
+  }
+  @media (max-width: 1699px) {
+    &_card {
+      padding: 20px;
+      h2 {
+        font-size: 17px;
+        line-height: 20px;
+      }
+      &_pin {
+        font-size: 17px;
+        margin: 10px 0;
+      }
+    }
+  }
+  @include media-breakpoint-down(xxl) {
+    &_left {
+      width: 100%;
+      border-right: 0;
+      padding-right: 0;
+      margin-bottom: 22px;
+    }
+    &_right {
+      width: 100%;
+      padding-left: 0;
+      margin-bottom: 22px;
+
+      button {
+        width: auto;
+      }
+    }
+  }
+  @include media-breakpoint-down(xl) {
+    &_card {
+      &_pin,
+      h2 {
+        font-size: 15px;
+      }
+      &_pin {
+        span {
+          &:not(:last-child) {
+            margin-right: 20px;
+          }
+        }
+      }
+      &_bg {
+        &-mastercard {
+          width: 300px;
+        }
+        &-visa {
+          width: 200px;
+        }
+      }
+      &_bg {
+        &-mastercard {
+          width: 300px;
+        }
+        &-visa {
+          width: 200px;
+        }
+      }
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &_card {
+      padding: 15px;
+      &_pin {
+        span {
+          &:not(:last-child) {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &_card {
+      &_pin,
+      h2 {
+        font-size: 14px;
+      }
+    }
+  }
+}

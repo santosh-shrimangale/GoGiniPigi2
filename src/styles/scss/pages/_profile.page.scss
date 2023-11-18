@@ -1,0 +1,702 @@
+.profilePage {
+  .sideBar {
+    width: 244px;
+    height: 100%;
+    flex-shrink: 0;
+    position: sticky;
+    top: 90px;
+    @include transition(0.3s);
+    &_tabs {
+      overflow-y: auto;
+      max-height: 530px;
+      @include media-breakpoint-down(lg) {
+        max-height: calc(100vh - 105px);
+      }
+    }
+  }
+  .profileCard {
+    width: calc(100% - 244px);
+    margin-left: 25px;
+  }
+  .reviewSec {
+    color: color(800);
+    .profileCard {
+      max-width: 940px;
+    }
+    .btnSkip {
+      &:after {
+        width: 100%;
+      }
+      &:hover {
+        &:after {
+          width: 0;
+        }
+      }
+    }
+    &_list {
+      li {
+        font-size: 14px;
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+      em {
+        padding-right: 10px;
+      }
+    }
+    &_info {
+      padding: 24px 32px;
+      margin-bottom: 30px;
+      &_left {
+        h2 {
+          &.text-truncate {
+            max-width: 345px;
+            width: 100%;
+            margin: 13px 0 11px;
+          }
+        }
+      }
+      &_img {
+        img {
+          object-fit: cover;
+          width: 26px;
+          height: 26px;
+          margin-right: 12px;
+          overflow: hidden;
+        }
+      }
+      &_right {
+        h2 {
+          margin-bottom: 45px;
+        }
+      }
+    }
+    &_review {
+      margin-bottom: 32px;
+      h2 {
+        margin-bottom: 10px;
+      }
+      &_col {
+        flex: 0 0 20%;
+        max-width: 20%;
+        padding: 0 10px;
+        h3 {
+          font-size: 14px;
+          line-height: 20px;
+          margin-bottom: 5px;
+        }
+      }
+
+      .rating {
+        direction: rtl;
+        display: inline-block;
+        color: color(200);
+
+        input[type="radio"] {
+          display: none;
+        }
+
+        label {
+          font-size: 15px;
+          cursor: pointer;
+        }
+
+        label:hover,
+        label:hover ~ label,
+        input[type="radio"]:checked ~ label {
+          color: color(600);
+          em {
+            &::before {
+              content: "\e918";
+            }
+          }
+        }
+      }
+      &_total {
+        max-width: 130px;
+        width: 100%;
+        padding: 15px 30px;
+        border-radius: 3px;
+        em {
+          font-size: 20px;
+        }
+        h3 {
+          font-size: 24px;
+          line-height: 22px;
+        }
+      }
+    }
+    &_comment {
+      margin-bottom: 25px;
+      textarea {
+        border-radius: 3px;
+        border-color: rgba($color: color(180), $alpha: 0.2);
+        height: 100%;
+        min-height: 165px;
+        font-size: 15px;
+        color: color(800);
+        &::-webkit-input-placeholder {
+          color: rgba($color: color(800), $alpha: 0.18);
+        }
+      }
+      p {
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 10px;
+      }
+    }
+    &_text {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    h2 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    .badge {
+      padding: 6px 15px;
+    }
+  }
+  .leaveReview {
+    .rating {
+      label {
+        font-size: 35px;
+        line-height: 0;
+      }
+    }
+  }
+  .varified {
+    &::before {
+      content: "\e912";
+      right: 15px;
+      font-family: "icomoon";
+      @include flexcenter();
+      @include absolutecenter("y");
+      background-color: color(400);
+      width: 22px;
+      height: 22px;
+      font-size: 8px;
+      color: color(50);
+      border-radius: 50%;
+    }
+  }
+  .form-control {
+    font-size: 13px;
+  }
+  .select2 {
+    .select2-selection {
+      &__rendered {
+        font-size: 13px;
+      }
+    }
+  }
+  table {
+    .dropdown-toggle {
+      font-size: 16px;
+      color: color(150);
+    }
+  }
+  .noteTxt {
+    font-size: 13px;
+  }
+  &_contentTime {
+    .timeSlot {
+      .form-label {
+        margin-bottom: 20px;
+      }
+      .col {
+        width: 16.28%;
+        flex: 0 0 16.28%;
+        input {
+          display: none;
+          ~ label {
+            border: 1px solid rgba(color(150), 0.4);
+            border-radius: 3px;
+            padding: 11px;
+            width: 100%;
+            color: color(800);
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 0;
+            text-align: center;
+            font-family: font(md);
+            background-color: color(50);
+          }
+          &:checked {
+            ~ label {
+              color: color(50);
+              background: color(600);
+              border-color: color(600);
+              span {
+                color: color(50);
+              }
+            }
+          }
+        }
+      }
+      @media (max-width: 1599px) {
+        .form-label {
+          margin-bottom: 10px;
+        }
+      }
+      @include media-breakpoint-down(xxl) {
+        .col {
+          width: 16.6%;
+          flex: 0 0 16.6%;
+        }
+      }
+      @include media-breakpoint-down(xl) {
+        .col {
+          input {
+            ~ label {
+              padding: 8px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      @include media-breakpoint-down(sm) {
+        margin-top: 15px;
+        .col {
+          width: 20%;
+          flex: 0 0 20%;
+        }
+      }
+      @media (max-width: 480px) {
+        .col {
+          width: 33.33%;
+          flex: 0 0 33.33%;
+        }
+      }
+    }
+  }
+  &_appointmentInfo {
+    padding: 30px 35px;
+    border: 1px solid rgba($color: color(200), $alpha: 0.09);
+    border-radius: 5px;
+    margin-top: 40px;
+    .profileCard {
+      &_heading {
+        &_title {
+          font-size: 18px;
+          color: color(400);
+        }
+      }
+    }
+    &_infoBox {
+      margin: 30px 0;
+      .badge_Info {
+        font-size: 13px;
+        color: color(200);
+        padding: 10px;
+        background-color: color(95);
+        border-radius: 4px;
+      }
+    }
+    .infoTitle {
+      font-size: 14px;
+      color: color(800);
+      margin-bottom: 12px;
+    }
+    &_infoMultimg {
+      .infoMultimg_multi {
+        margin: -15px -8px 0;
+        li {
+          // flex: 0 0 12%;
+          // max-width: 12%;
+          width: 120px;
+          height: 120px;
+          padding: 15px 8px 0;
+          // margin-bottom: 15px;
+        }
+      }
+      .infoMultimg_img {
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        overflow: hidden;
+        display: block;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    p {
+      font-size: 14px;
+      color: color(200);
+      span {
+        color: color(600);
+      }
+    }
+  }
+  &_uploadStuff {
+    @media (min-width: 1699px) {
+      .uploadStuff {
+        &_img {
+          height: 156px;
+        }
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1599px) {
+      .uploadStuff {
+        &_img {
+          height: 125px;
+        }
+      }
+    }
+    @media (min-width: 376px) and (max-width: 767px) {
+      .uploadStuff {
+        &_img {
+          height: 150px;
+        }
+      }
+    }
+  }
+  &_services {
+    .form-check {
+      label {
+        font-family: font(rg);
+        color: color(200);
+      }
+    }
+    &_items {
+      margin-bottom: 10px;
+    }
+    &_head {
+      margin-bottom: 25px;
+      h2 {
+        font-size: 20px;
+        color: color(800);
+        font-family: font(sb);
+        svg {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1599px) {
+    .reviewSec {
+      &_info {
+        padding: 18px;
+      }
+      &_review {
+        margin-bottom: 20px;
+      }
+    }
+    &_appointmentInfo {
+      padding: 30px;
+      margin-top: 30px;
+      p {
+        font-size: 13px;
+      }
+      .infoTitle {
+        margin-bottom: 8px;
+      }
+      &_infoBox {
+        margin: 20px 0;
+      }
+      .profileCard {
+        &_heading {
+          &_title {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1499px) {
+    .varified {
+      &::before {
+        width: 20px;
+        height: 20px;
+        font-size: 7px;
+      }
+    }
+    .reviewSec {
+      &_info {
+        &_left {
+          h2 {
+            &.text-truncate {
+              width: 275px;
+              margin: 10px 0;
+            }
+          }
+        }
+      }
+    }
+    .leaveReview {
+      .rating {
+        label {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    .form-group {
+      margin-bottom: 40px;
+    }
+    &_services {
+      .form-group {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  @include media-breakpoint-down(xxl) {
+    .leaveReview {
+      .rating {
+        label {
+          font-size: 24px;
+        }
+      }
+    }
+    &_services {
+      margin-bottom: 25px;
+      &_head {
+        h2 {
+          font-size: 18px;
+        }
+      }
+    }
+    .sideBar {
+      width: 210px;
+    }
+    .profileCard {
+      margin-left: 15px;
+      padding: 20px;
+      width: calc(100% - 210px);
+    }
+    .reviewSec {
+      &_info {
+        margin-bottom: 25px;
+        span {
+          font-size: 14px;
+        }
+      }
+      &_review {
+        margin-bottom: 15px;
+        &_total {
+          max-width: 110px;
+          padding: 12px 14px;
+          h3 {
+            font-size: 20px;
+            line-height: 18px;
+          }
+        }
+      }
+      h2 {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+    &_appointmentInfo {
+      padding: 20px;
+      margin-top: 20px;
+      &_infoBox {
+        margin: 15px 0;
+      }
+    }
+  }
+  @include media-breakpoint-down(xl) {
+    .varified {
+      &::before {
+        width: 18px;
+        height: 18px;
+        font-size: 7px;
+      }
+    }
+    &_services {
+      &_head {
+        margin-bottom: 20px;
+      }
+    }
+    .leaveReview {
+      .rating {
+        label {
+          font-size: 20px;
+        }
+      }
+    }
+    .profileCard {
+      margin-left: 10px;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .profileCard {
+      width: 100%;
+      margin: auto;
+    }
+    &_contentTime {
+      margin-bottom: 30px;
+    }
+    .reviewSec {
+      .profileCard {
+        max-width: 100%;
+      }
+    }
+    .sideBar {
+      position: fixed;
+      top: 0px;
+      z-index: 100;
+      left: -100%;
+      border-radius: 0;
+      @include transition(0.3s);
+      &.sideBar-open {
+        left: 0;
+      }
+    }
+    .sidebarMenu {
+      font-size: 20px;
+      height: 34px;
+      padding: 7px 8px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .profileCard {
+      padding: 15px;
+    }
+    .reviewSec {
+      &_info {
+        padding: 12px;
+        margin-bottom: 15px;
+        span {
+          font-size: 12px;
+        }
+        &_right {
+          h2 {
+            margin-bottom: 25px;
+          }
+        }
+      }
+      &_comment {
+        textarea {
+          min-height: 130px;
+        }
+      }
+      &_review {
+        &_total {
+          max-width: 100px;
+          padding: 10px 12px;
+          h3 {
+            font-size: 18px;
+          }
+        }
+        .rating {
+          label {
+            font-size: 15px;
+          }
+        }
+        &_col {
+          flex: 0 0 50%;
+          max-width: 50%;
+          padding: 5px 10px;
+          &:last-child {
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+    &_appointmentInfo {
+      padding: 15px;
+      margin-top: 15px;
+      &_infoBox {
+        [class*="col-"] {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &_services {
+      &_head {
+        margin-bottom: 15px;
+        h2 {
+          font-size: 16px;
+        }
+        svg {
+          width: 25px;
+        }
+      }
+    }
+    &_appointmentInfo {
+      &_infoMultimg {
+        .infoMultimg_multi {
+          li {
+            width: 33.33%;
+          }
+        }
+        .infoMultimg_img {
+          width: 100%;
+          height: 100%;
+          border-radius: 3px;
+          overflow: hidden;
+          display: block;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    .reviewSec {
+      h2 {
+        font-size: 14px;
+      }
+      &_comment {
+        margin-bottom: 10px;
+        textarea {
+          min-height: 100px;
+        }
+      }
+      &_info {
+        &_img {
+          img {
+            width: 22px;
+            height: 22px;
+            margin-right: 6px;
+          }
+        }
+        &_right {
+          h2 {
+            margin-bottom: 15px;
+          }
+        }
+        &_left {
+          h2 {
+            &.text-truncate {
+              width: 230px;
+              margin: 8px 0;
+            }
+          }
+        }
+      }
+    }
+    &_contentTime {
+      margin-bottom: 20px;
+    }
+    .sidebarMenu {
+      font-size: 16px;
+    }
+    .noteTxt {
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 480px) {
+    &_appointmentInfo {
+      &_infoBox {
+        [class*="col-"] {
+          width: 100%;
+        }
+      }
+      .infoMultimg_multi {
+        li {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+export const text = {
+  firstName: "First Name",
+  lastName: "Last Name",
+  gender: "Gender",
+  email: "Email Address",
+  mobile: "Mobile Number",
+  save: "Save Changes",
+  myProfile: "My Profile",
+  editProfile: "Edit Profile ",
+  firstNamePlaceholder: "Enter Your First Name",
+  lastNamePlaceholder: "Enter Your Last Name",
+  genderPlaceholder: "Gender",
+  emailPlaceholder: "Enter Your email",
+  mobilePlaceholder: "Enter Your Mobile Number",
+};

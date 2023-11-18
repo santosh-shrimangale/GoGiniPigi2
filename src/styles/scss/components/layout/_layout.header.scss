@@ -1,0 +1,392 @@
+.mainHeader{
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: color(50);
+    @include transition(all 0.4s);
+    // @include box-shadow(0, 0, 15px, rgba(color(800), 0.12));
+    .navbar{
+        padding: 20px 0;
+        .btn{
+            min-width: 105px;
+            height: 38px;
+        }
+    }    
+    .nav{
+        &-link{
+            font-size: 16px;
+            // font-family: font(lt);
+            color: color(200);
+            @include transition(all 0.4s);
+            line-height: 28px;
+            &:hover, &:focus{
+                color:color(400)
+            }
+        }
+        &-item{
+            &:not(:last-child){
+                margin-right: 30px;
+            }
+            &.active{
+                .nav-link{
+                    color:color(400);
+                    font-family: font(bd);
+                }
+            }
+        }
+    }
+    &_menu{    
+        > li{
+            &:not(:last-child){
+                padding-right: 15px;
+            }
+        }
+        .dropdown { 
+            &-toggle {
+                padding: 0; font-size: 18px; color: color(50);
+                background-color: color(700);
+                &::after { display: none;}
+            }
+            &-list{
+                &-item{
+                    border-bottom: 1px solid rgba($color: color(800), $alpha: 0.05);
+                }
+            }
+            
+        }
+    }    
+    &_likeicon{
+        background-color: rgba($color:  color(600), $alpha: 0.20);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        em{
+            color: color(600);
+        }
+    }
+    &_notification{
+        .dropdown{ 
+            &-toggle {
+                width: 40px;height: 40px;background-color: color(700);               
+            }
+            &-menu  {
+                min-width: 380px;
+            }
+            &-list{
+                &-item{
+                    padding-bottom: 15px;
+                    margin-bottom: 15px;
+                    @include transition(all 0.4s);
+                    &.active,&:hover{
+                        div, p{color: color(800);}
+                    }
+                }
+            }
+        }
+        &_pic{
+            flex-shrink: 0;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            img{
+                width: 100%; height: 100%; object-fit: cover;
+            }
+        }
+        &_icon{
+            background-color: rgba($color:  color(400), $alpha: 0.20);
+            em{
+                color: color(400);
+            }
+        }
+        .viewall {
+            color: color(400);
+            font-size: 15px;
+            display: inline-block;
+            font-family: font(sb);
+        }        
+        &_ctn {
+            padding-left: 10px;
+            padding-right: 6px;
+            line-height: 22px;
+            font-size: 16px;
+            color: color(150);
+            @include text-clamp(2);
+            span { color: color(800);}
+        }
+        &_info{
+            color: color(800);
+            flex-shrink: 0;
+            display: flex;
+            height: auto;
+            align-items: end;
+            p{
+                font-size: 12px;
+                margin-bottom: 0;
+                line-height: 20px;
+                color: color(150);
+            }
+        }
+    }
+    &_profile {
+        .dropdown{
+            padding-left: 15px;
+            &::after{
+                content: "";
+                background-color: rgba($color:  color(150), $alpha: 0.10);
+                width: 1px;
+                height: 100%;
+                @include absolutecenter(y);
+                left: 0px;
+            }
+            &-toggle { 
+                position: relative;
+                margin-right: 20px;
+                &::before{
+                    content: "\e911";
+                    font-family: "icomoon" !important;
+                    position: absolute;
+                    right: -20px;
+                    z-index: 9;
+                    color: rgba($color:  color(800), $alpha: 0.50);
+                    font-size: 7px;
+                    top: 12px;
+                    @include transition(all 0.3s);
+                }
+                img{ 
+                    width: 40px; height: 40px; object-fit: cover; border-radius: 50%;
+                }
+                &.show{
+                    &::before{
+                        // transform: rotate(-180deg);
+                        @include transforms(rotate(-180deg));
+                    }
+                }
+            }            
+            &-menu{
+                min-width: 180px;
+                @include box-shadow(0,0px, 30px, rgba($color: color(900), $alpha: 0.15));
+            }
+            &-list {
+                &-item {   
+                    &:not(:last-child){
+                        margin-bottom: 10px;
+                        padding-bottom: 10px;
+                    }
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                    &.active{
+                        a{color: color(600);}                        
+                        .icon-arrow-right {
+                            right: -8px; opacity: 1;
+                            color: color(600);
+                        }
+                    }
+                    a{
+                        position: relative;
+                        color: color(800); 
+                        font-size: 16px;
+                        font-family: font(md);
+                        line-height: normal; 
+                        span{
+                            font-size: 12px; opacity: 0;
+                            position: absolute; right: 5px;
+                            @include transition(all 0.3s);
+                            text-decoration: none; color: color(500);
+                        }
+                        &:hover {
+                            color: color(600);
+                            span{
+                                right: -8px; opacity: 1;
+                                color: color(600);
+                            }
+                        }        
+                    }
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(xxl){
+        .nav{
+            &-item{
+                &:not(:last-child){
+                    margin-right: 20px;
+                }
+            }
+        }
+        .navbar{
+            .btn{
+                min-width: 85px;
+            }
+            &-brand{
+                img{width: 160px;}
+            }
+        }
+        &_profile{
+            .dropdown{
+                &-list {
+                    &-item {   
+                        &:not(:last-child){
+                            margin-bottom: 7px;
+                            padding-bottom: 7px;
+                        }
+                        a{
+                            font-size: 14px;      
+                        }
+                    }
+                }
+            }
+        }
+        &_notification{
+            &_ctn {
+                line-height: 20px;
+                font-size: 14px;
+            }
+            &_pic{
+                width: 35px;
+                height: 35px;
+            }
+            .dropdown{
+                &-list{
+                    &-item{
+                        padding-bottom: 12px;
+                        margin-bottom: 12px;
+                        position: relative;
+                    }
+                }
+            }
+            
+            .viewall{font-size: 14px;}
+        }
+    }
+    @include media-breakpoint-down(lg){
+        .nav{
+            &-link{
+                font-size: 14px;
+                line-height: 24px;
+            }
+            &-item{
+                padding-top: 10px;
+                &:not(:last-child){
+                    margin-right: 0;
+                }
+            }
+        }
+        .navbar{
+            padding: 15px 0;
+            &-brand{
+                img{width: 150px;}
+            }
+            .toggleMenu{
+                border: 0;
+                color: color(50);
+                background: color(400);
+                margin-left: 10px;
+                @include flexcenter();
+                padding: 9px 10px;
+            }
+            .btn{
+                margin-left: auto;
+                height: 34px;
+                min-width: 75px;
+                border-radius: 0;
+            }
+        }
+        &_notification{
+            .dropdown{ 
+                &-toggle {
+                    width: 32px;height: 32px;
+                }
+            }
+        }
+        &_likeicon{
+            width: 32px;
+            height: 32px;
+            em{font-size: 12px;}
+        }
+        &_profile{
+            .dropdown{
+                &-toggle {
+                    img{width: 32px; height: 32px;}
+                }
+            }
+        }
+        &_menu{
+            margin-left: auto;
+            .dropdown{
+                &-toggle{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(sm){
+        .navbar{
+            &-brand{
+                img{width: 120px;}
+            }
+            .toggleMenu{
+                margin-left: 10px;
+                padding: 7px;
+            }
+            .btn{
+                height: 30px;
+                min-width: 55px;
+               padding: 0;
+               font-size: 12px;
+            }
+        }
+        &_menu{
+            > li{
+                &:not(:last-child){
+                    padding-right: 8px;
+                }
+            }
+            .dropdown{
+                &-toggle{
+                    font-size: 12px;
+                }
+            }
+        }
+        &_likeicon{
+            em{font-size: 10px;}
+        }
+        &_profile{
+            .dropdown{
+                padding-left: 10px;
+                &-toggle {
+                    &:before{
+                        top: 9px;
+                    }
+                }
+            }
+        }
+        &_notification{
+            &_ctn {
+                font-size: 13px;
+                @include text-clamp(1);
+                height: 20px;
+            }
+            &_info{
+                position: absolute;
+                bottom: 8px;
+                left: 45px
+            }
+            .dropdown{ 
+                position: static;
+                &-menu  {
+                    min-width: 100%;
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+    @media (max-width: 330px){
+        .navbar{
+            &-brand{
+                img{width: 106px;}
+            }
+        }
+    }
+}

@@ -1,0 +1,132 @@
+import { Outlet } from "react-router-dom";
+import {
+  Home,
+  OurStory,
+  Blog,
+  PrivacyPolicy,
+  TermsAndCondition,
+  Faq,
+  Ginipigs,
+} from "../../../pages";
+import routesMap from "../../../routeControl/userRouteMap";
+
+export default function route(t) {
+  return [
+    {
+      path: routesMap.HOME.path,
+      private: false,
+      name: t("text.footer.company"),
+      key: routesMap.HOME.path,
+      belongsToFooter: true,
+      commonRoute: true,
+      element: <Outlet />,
+      children: [
+        {
+          path: routesMap.HOME.path,
+          name: t("text.home.title"),
+          key: routesMap.HOME.path,
+          commonRoute: true,
+          private: false,
+          belongsToFooter: true,
+          element: <Home />,
+        },
+        {
+          path: routesMap.OUR_STORY.path,
+          name: t("text.ourStory.title"),
+          key: routesMap.OUR_STORY.path,
+          commonRoute: true,
+          private: false,
+          belongsToFooter: true,
+          element: <OurStory />,
+        },
+        {
+          path: routesMap.BLOG.path,
+          name: t("text.blog.footerTitle"),
+          key: routesMap.BLOG.path,
+          commonRoute: true,
+          private: false,
+          belongsToFooter: true,
+          element: <Blog />,
+        },
+      ],
+    },
+    {
+      path: routesMap.HOME.path,
+      private: false,
+      name: t("text.footer.customerService"),
+      key: routesMap.HOME.path,
+      belongsToFooter: true,
+      commonRoute: true,
+      element: <Outlet />,
+      children: [
+        {
+          path: routesMap.HOME.path,
+          name: t("text.home.title"),
+          key: routesMap.HOME.path,
+          commonRoute: true,
+          private: false,
+          belongsToFooter: true,
+          element: <Home />,
+        },
+      ],
+    },
+    {
+      path: routesMap.HOME.path,
+      private: false,
+      name: t("text.footer.vip"),
+      key: routesMap.HOME.path,
+      belongsToFooter: true,
+      commonRoute: true,
+      element: <Outlet />,
+      children: [
+        {
+          path: routesMap.GINIPIGS.path,
+          name: t("text.ginipigs.pageTitle"),
+          key: routesMap.GINIPIGS.path,
+          commonRoute: true,
+          private: false,
+          belongsToFooter: true,
+          element: <Ginipigs />,
+        },
+      ],
+    },
+    {
+      path: routesMap.HOME.path,
+      private: false,
+      name: t("text.footer.legals"),
+      key: routesMap.HOME.path,
+      belongsToFooter: true,
+      commonRoute: true,
+      element: <Outlet />,
+      children: [
+        {
+          path: routesMap.TERMS_AND_CONDITION.path,
+          name: t("text.termsAndCondition.title"),
+          key: routesMap.TERMS_AND_CONDITION.path,
+          commonRoute: true,
+          private: false,
+          belongsToFooter: true,
+          element: <TermsAndCondition />,
+        },
+        {
+          path: routesMap.PRIVACY_POLICY.path,
+          name: t("text.privacyPolicy.title"),
+          key: routesMap.PRIVACY_POLICY.path,
+          commonRoute: true,
+          private: false,
+          belongsToFooter: true,
+          element: <PrivacyPolicy />,
+        },
+        {
+          path: routesMap.FAQ.path,
+          name: t("text.faq.footerTitle"),
+          key: routesMap.FAQ.path,
+          commonRoute: true,
+          private: false,
+          belongsToFooter: true,
+          element: <Faq />,
+        },
+      ],
+    },
+  ];
+}

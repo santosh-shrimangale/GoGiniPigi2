@@ -1,0 +1,117 @@
+.select2 {
+  &.select2-container {
+    width: 100% !important;
+    span:focus {
+      outline: none;
+      border: 1px solid color(400) !important;
+    }
+    &--disabled {
+      span:focus {
+        border-color: rgba($color: color(180), $alpha: 0.1) !important;
+      }
+    }
+    &--open {
+      .select2-selection {
+        border: 1px solid color(400) !important;
+        &__arrow {
+          &:after {
+            // transform: rotate(180deg);
+            @include transforms(rotate(180deg));
+          }
+        }
+      }
+    }
+    .select2-selection {
+      &--single {
+        height: 45px;
+        padding: 8px 20px;
+        border-radius: 3px;
+        background: color(60);
+        display: flex;
+        align-items: center;
+        border: 1px solid rgba($color: color(180), $alpha: 0.1);
+      }
+      &__arrow {
+        top: 50% !important;
+        // transform: translateY(-50%);
+        @include transforms(translateY(-50%));
+        right: 8px !important;
+        text-align: center;
+        height: auto !important;
+        &:after {
+          font-family: "icomoon";
+          content: "\e911";
+          font-size: 8px;
+          display: inline-block;
+          color: #83827f;
+          @include transition(all 0.3s);
+        }
+        b {
+          display: none;
+        }
+      }
+      &__rendered {
+        font-size: 16px;
+        color: color(800) !important;
+        padding-left: 0px !important;
+        padding-right: 15px !important;
+      }
+      &__placeholder {
+        color: #bbbbbb !important;
+      }
+    }
+  }
+  @include media-breakpoint-down(xxl) {
+    &.select2-container {
+      .select2-selection {
+        &--single {
+          height: 40px;
+        }
+        &__arrow {
+          &:after {
+            font-size: 7px;
+          }
+          b {
+            display: none;
+          }
+        }
+        &__rendered {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.select2-container--open {
+  .select2-dropdown {
+    &--below,
+    &--above {
+      border-color: color(400);
+      border-radius: 0;
+    }
+    .select2-search {
+      &__field {
+        outline: none;
+        border-color: color(80) !important;
+        &:focus {
+          border-color: color(400) !important;
+        }
+      }
+    }
+    .select2-results {
+      &__option {
+        padding: 8px 15px !important;
+        color: color(900);
+        font-size: 13px;
+        &--highlighted,
+        &[aria-selected="true"] {
+          background-color: color(400) !important;
+          color: color(50) !important;
+        }
+        @include media-breakpoint-down(sm) {
+          padding: 4px 6px !important;
+        }
+      }
+    }
+  }
+}

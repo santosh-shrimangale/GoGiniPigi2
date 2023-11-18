@@ -1,0 +1,136 @@
+
+// common section about us
+.commonhead{
+    img{margin-bottom: 25px;}
+    &_title{
+        font-size: 45px;
+        font-family: font(sb);
+        line-height: 64px;
+        color: color(800);
+        margin-bottom: 30px;
+    }
+    &_subtitle{
+        font-size: 16px;
+        font-family: font(bk);
+        margin-bottom: 5px;
+        color: color(600);
+        display: block;
+        line-height: normal;
+    }
+    p{
+        font-size: 16px;
+        line-height: 28px;
+        color: color(200);
+        font-family: font(lt);
+    }
+    &_button{
+        margin-top: 25px;
+        .btn-primary, .btn-yellow{min-width: 200px;}
+    }
+    &_list{
+        margin-top: 30px;
+        &_img{
+            width: 50px;
+            flex-shrink: 0;
+            .svg{ @include transition(all 0.5s);}
+        }
+        &:hover{
+            .svg{ @include transforms(translateX(5px)); }
+        }
+        &_title{
+            margin-left: 25px;
+            h3{
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    @media (max-width: 1599px){
+        &_list{
+            margin-top: 25px;
+            &_title{
+                margin-left: 20px;
+                h3{
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &_title{
+            font-size: 32px;
+            line-height: 45px;
+            margin-bottom: 20px;
+        }
+    }
+    // @media (max-width: 1499px){
+    //     &_title{
+    //         font-size: 40px;
+    //         line-height: 50px;
+    //     }  
+    // }
+    @include media-breakpoint-down(xxl){
+        &_title{
+            font-size: 28px;
+            line-height: 40px;            
+            margin-bottom: 15px;
+        }
+        p{
+            font-size: 14px;
+            line-height: 22px;
+        }
+        &_button{
+            .btn-primary, .btn-yellow{min-width: auto;}
+        }
+        &_list{
+            margin-top: 20px;
+            &_title{
+                margin-left: 10px;
+                h3{font-size: 18px;}
+            }
+        }
+        img{margin-bottom: 15px;}
+        &_button{
+            margin-top: 15px;
+        }
+    }
+    @include media-breakpoint-down(xl){
+        &_subtitle{font-size: 15px;}
+    }
+    @include media-breakpoint-down(lg){
+        &_title{
+            font-size: 24px;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+        &_list{
+            &_title{
+                h3{
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        &_button{
+            margin-top: 10px;
+        }
+    }
+    @include media-breakpoint-down(md){
+        &_title{
+            font-size: 21px;
+        }
+        img{margin-bottom: 15px;}
+        &_subtitle{font-size: 14px;}
+    }
+    @include media-breakpoint-down(sm){
+        img{margin-bottom: 10px;}
+        &_button{
+            .btn{
+                font-size: 13px;
+            }
+            .readmore-left{
+                margin-left: 10px;
+            }
+        }
+    }
+}
+    

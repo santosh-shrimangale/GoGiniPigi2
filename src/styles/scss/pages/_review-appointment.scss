@@ -1,0 +1,722 @@
+.aptPage {
+  .form-group {
+    label {
+      margin-bottom: 15px;
+    }
+    .form-check {
+      label {
+        font-size: 15px;
+        font-family: font(rg);
+        color: color(200);
+      }
+    }
+    .form-label {
+      &_title {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+  .form-apt {
+    .form-check-inline {
+      margin-right: 60px;
+    }
+  }
+  .uploadStuff {
+    li {
+      max-width: 178px;
+      width: 100%;
+    }
+
+    &_consult {
+      li {
+        height: 100px;
+      }
+    }
+  }
+  .timeSlot {
+    .col {
+      width: 19.99%;
+      flex: 0 0 19.99%;
+      input {
+        ~ label {
+          padding: 10px;
+          line-height: 15px;
+        }
+      }
+    }
+    & + .timeSlot {
+      margin-top: 15px;
+    }
+    .day {
+      margin-bottom: 10px;
+    }
+    input {
+      &:disabled {
+        ~ label {
+          border-color: rgba(color(150), 0);
+          background: rgba(color(150), 0.3);
+          color: color(200);
+          cursor: default;
+        }
+      }
+    }
+  }
+  .day {
+    &_name {
+      font-size: 16px;
+      color: color(800);
+      line-height: 29px;
+      font-family: font(sb);
+    }
+
+    .form-check {
+      input[type="checkbox"] {
+        top: 0px;
+        width: 16px;
+        height: 16px;
+      }
+      label {
+        font-size: 12px;
+        margin-left: 0;
+      }
+    }
+  }
+  .selectedDate {
+    &_subtitle {
+      font-size: 18px;
+      line-height: 22px;
+      font-family: font(sb);
+      margin-bottom: 22px;
+    }
+    &_tabsTime {
+      .nav-item {
+        padding-bottom: 0;
+        &:not(:last-child) {
+          margin-right: 22px;
+        }
+      }
+      .nav-link {
+        font-size: 14px;
+        color: color(150);
+        border: 0;
+        &.active {
+          color: color(600);
+          background-color: color(50);
+        }
+        &:hover {
+          color: color(600);
+          background-color: color(50);
+        }
+      }
+    }
+    &_card {
+      border-radius: 3px;
+      &_head {
+        padding: 15px 20px;
+        background-color: color(95);
+      }
+      &_body {
+        border: 1px solid rgba(#d3d3d8, $alpha: 0.41);
+        border-top: 0;
+        padding: 20px;
+        li {
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+        }
+        .svg {
+          width: 46px;
+          height: 46px;
+          overflow: hidden;
+          margin-right: 10px;
+        }
+        h4 {
+          font-size: 15px;
+          font-family: font(sb);
+        }
+        span {
+          color: color(200);
+          font-size: 14px;
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+        }
+      }
+      &_date {
+        font-size: 16px;
+        font-family: font(sb);
+        color: color(800);
+      }
+    }
+    &_header {
+      margin-bottom: 30px;
+    }
+    &_arrow {
+      @include transforms(translateX(-90px));
+      top: 13px;
+      .swiper-button-prev,
+      .swiper-button-next {
+        background: none;
+        height: auto;
+        em {
+          font-size: 20px;
+          color: color(400);
+        }
+      }
+    }
+    .swiper-slide {
+      opacity: 0.5;
+      &-active,
+      &-prev,
+      &-next {
+        opacity: 1;
+      }
+    }
+    .swiper-button-next {
+      right: auto;
+      left: 60px;
+    }
+    @media (max-width: 1599px) {
+      &_tabsTime {
+        .nav-item {
+          &:not(:last-child) {
+            margin-right: 15px;
+          }
+        }
+        .nav-link {
+          font-size: 13px;
+        }
+      }
+      &_header,
+      &_subtitle {
+        margin-bottom: 15px;
+      }
+      &_subtitle {
+        font-size: 16px;
+      }
+      &_card {
+        &_head {
+          padding: 15px;
+        }
+        &_body {
+          padding: 15px;
+          .svg {
+            width: 38px;
+            height: 38px;
+          }
+          h4 {
+            font-size: 13px;
+          }
+        }
+        &_date {
+          font-size: 14px;
+        }
+      }
+      &_arrow {
+        @include transforms(translateX(-75px));
+        .swiper-button-prev,
+        .swiper-button-next {
+          em {
+            font-size: 16px;
+          }
+        }
+      }
+      .swiper-button-next {
+        left: 50px;
+      }
+    }
+    @include media-breakpoint-down(xl) {
+      &_card {
+        &_body {
+          .svg {
+            width: 32px;
+            height: 32px;
+          }
+          span {
+            font-size: 13px;
+          }
+          li {
+            &:not(:last-child) {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+      &_arrow {
+        @include transforms(translateX(-60px));
+        .swiper-button-prev,
+        .swiper-button-next {
+          em {
+            font-size: 14px;
+          }
+        }
+      }
+      .swiper-button-next {
+        left: 40px;
+      }
+    }
+    @media (max-width: 480px) {
+      &_tabsTime {
+        max-width: 70%;
+        padding-bottom: 4px;
+        .nav-item {
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+        }
+        .nav-link {
+          font-size: 12px;
+        }
+        &::-webkit-scrollbar {
+          @include media-breakpoint-down(xs) {
+            width: 2px;
+            height: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  // infoBox
+  .infoBox {
+    border: 1px solid rgba(color(180), 0.15);
+    border-radius: 3px;
+    &_inner {
+      padding: 0 30px 30px;
+      .action {
+        .svg {
+          width: 22px;
+        }
+      }
+      .form-group {
+        margin-bottom: 0;
+        label {
+          margin-bottom: 8px;
+        }
+        span {
+          display: block;
+          font-size: 14px;
+          color: color(200);
+        }
+      }
+    }
+    &_header {
+      border-bottom: 1px solid rgba(color(180), 0.15);
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      h3 {
+        font-size: 18px;
+        line-height: 30px;
+        color: color(400);
+        @include text-clamp(1);
+      }
+      &--bg {
+        background: color(400);
+        border-radius: 3px 3px 0 0;
+        padding: 30px;
+        h3 {
+          color: color(50);
+        }
+      }
+    }
+    &_card {
+      border: 1px solid rgba(color(180), 0.15);
+      padding: 30px;
+      border-radius: 3px;
+      &:not(:last-child) {
+        margin-bottom: 18px;
+      }
+    }
+    &_appointment,
+    &_skills {
+      ul {
+        margin-top: -30px;
+      }
+      li {
+        min-width: 240px;
+        padding-top: 30px;
+      }
+    }
+    &_appointment {
+      li {
+        &:not(:last-child) {
+          padding-right: 20px;
+        }
+      }
+      .thumbnail {
+        margin-right: 60px;
+        max-width: 262px;
+        height: 130px;
+        overflow: hidden;
+        border-radius: 3px;
+        &:hover {
+          @include transition(0.5s ease-in-out);
+          img {
+            @include transforms(scale(1.2));
+            @include transition(0.5s ease-in-out);
+          }
+        }
+        img {
+          border-radius: 3px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          @include transforms(scale(1));
+          @include transition(0.5s ease-in-out);
+        }
+      }
+      .txt {
+        flex: 1;
+      }
+    }
+    &_skills {
+      li {
+        &:not(:last-child) {
+          padding-right: 147px;
+        }
+      }
+    }
+    &_option {
+      background: color(95);
+      padding: 18px;
+      border-radius: 4px;
+      margin: 30px 0;
+      ul {
+        border-top: 1px solid rgba(color(180), 0.15);
+        margin-top: 18px;
+      }
+      li {
+        width: 25%;
+        padding-top: 18px;
+        &:not(:last-child) {
+          padding-right: 18px;
+        }
+      }
+    }
+    &_preference {
+      h3 {
+        font-size: 16px;
+        line-height: 30px;
+      }
+      .form-group {
+        margin-top: 20px;
+      }
+      .docFile {
+        span {
+          background: color(95);
+          font-size: 13px;
+          color: color(200);
+          padding: 10px;
+          border-radius: 4px;
+          &:not(:last-child) {
+            margin-right: 10px;
+            margin-bottom: 10px;
+          }
+        }
+        a {
+          font-size: 13px;
+          color: color(400);
+        }
+      }
+    }
+    &_availability {
+      margin-bottom: 60px;
+      ul {
+        margin-top: -18px;
+      }
+      li {
+        width: 33.33%;
+        padding-top: 18px;
+        &:not(:last-child) {
+          padding-right: 18px;
+        }
+        span {
+          @include text-clamp(1);
+        }
+      }
+    }
+    @media (max-width: 1699px) {
+      &_inner {
+        .action {
+          .svg {
+            width: 16px;
+          }
+        }
+      }
+      &_header {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        h3 {
+          font-size: 16px;
+          line-height: 28px;
+        }
+        &--bg {
+          padding: 20px;
+        }
+      }
+      &_card {
+        padding: 20px;
+      }
+      &_appointment {
+        .thumbnail {
+          margin-right: 40px;
+        }
+      }
+      &_availability {
+        margin-bottom: 30px;
+      }
+      &_skills {
+        li {
+          &:not(:last-child) {
+            padding-right: 97px;
+          }
+        }
+      }
+    }
+    @include media-breakpoint-down(xxl) {
+      &_inner {
+        padding: 0 20px 20px;
+        .form-group {
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+      &_header {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        h3 {
+          font-size: 15px;
+          line-height: normal;
+        }
+        &--bg {
+          padding: 15px;
+        }
+      }
+      &_card {
+        padding: 15px;
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+      &_appointment {
+        .thumbnail {
+          margin-right: 25px;
+          max-width: 230px;
+        }
+      }
+      &_appointment,
+      &_skills {
+        ul {
+          margin-top: -20px;
+        }
+        li {
+          min-width: 200px;
+          padding-top: 20px;
+        }
+      }
+      &_skills {
+        li {
+          &:not(:last-child) {
+            padding-right: 45px;
+          }
+        }
+      }
+      &_option {
+        padding: 15px;
+        margin: 20px 0;
+        ul {
+          margin-top: 15px;
+        }
+        li {
+          padding-top: 15px;
+          &:not(:last-child) {
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+    @include media-breakpoint-down(xl) {
+      border: 0;
+      &_inner {
+        padding: 0;
+      }
+      &_header {
+        &--bg {
+          margin-bottom: 0;
+        }
+      }
+      &_appointment {
+        .thumbnail {
+          margin-right: 15px;
+          max-width: 200px;
+        }
+        li {
+          &:not(:last-child) {
+            padding-right: 15px;
+          }
+        }
+      }
+      &_skills {
+        li {
+          &:not(:last-child) {
+            padding-right: 15px;
+          }
+        }
+      }
+      &_appointment,
+      &_skills {
+        ul {
+          margin-top: -15px;
+        }
+        li {
+          min-width: 180px;
+          padding-top: 15px;
+        }
+      }
+      &_option {
+        margin: 15px 0;
+      }
+      &_preference {
+        .form-group {
+          margin-top: 15px;
+        }
+      }
+    }
+    @include media-breakpoint-down(lg) {
+      &_availability {
+        margin-bottom: 20px;
+        ul {
+          margin-top: -15px;
+        }
+        li {
+          width: 50%;
+          padding-top: 15px;
+          &:not(:last-child) {
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+    @include media-breakpoint-down(md) {
+      &_appointment {
+        ul {
+          margin-top: 0;
+        }
+        .thumbnail {
+          margin-right: 0;
+          max-width: 100%;
+          height: 200px;
+        }
+      }
+      &_appointment,
+      &_skills {
+        li {
+          min-width: auto;
+          width: 50%;
+        }
+      }
+      &_option {
+        li {
+          width: 50%;
+        }
+      }
+    }
+    @media (max-width: 480px) {
+      &_appointment,
+      &_skills,
+      &_option,
+      &_availability {
+        li {
+          width: 100%;
+          padding-top: 10px;
+          &:not(:last-child) {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &_selectcatg {
+    font-size: 12px;
+    font-family: font(bk);
+    line-height: 22px;
+    color: color(800);
+  }
+  @include media-breakpoint-down(xxl) {
+    .aptOnline {
+      .form-group {
+        p {
+          font-size: 13px;
+        }
+      }
+    }
+    .form-group {
+      .form-label {
+        &_title {
+          font-size: 15px;
+          line-height: 17px;
+        }
+      }
+      label {
+        margin-bottom: 10px;
+      }
+      .form-check {
+        label {
+          font-size: 13px;
+        }
+      }
+    }
+    .day {
+      &_name {
+        font-size: 14px;
+        line-height: 23px;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .aptInperson,
+    .aptOnline {
+      .row {
+        & > div {
+          width: 100%;
+        }
+      }
+    }
+    .form-group {
+      .form-label {
+        margin-bottom: 6px;
+      }
+    }
+    .profilePage_contentTime,
+    .datepicker-inline {
+      margin-bottom: 15px;
+    }
+    .selectedDate {
+      .row {
+        & > div {
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+    .timeSlot {
+      .col {
+        width: 24.99%;
+        flex: 0 0 24.99%;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .aptInperson,
+    .aptOnline {
+      .ui-datepicker.ui-widget-content {
+        width: 100%;
+      }
+    }
+  }
+}

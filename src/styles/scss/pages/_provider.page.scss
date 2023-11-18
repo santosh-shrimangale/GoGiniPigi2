@@ -1,0 +1,120 @@
+.providerPage{
+  &_findbox{
+    h2{
+      @include media-breakpoint-up(xxl){
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &_platform{
+    .commonhead{
+      margin-bottom: 60px;
+      &_button{margin-top: 50px;}
+    }
+    h3{
+      font-size: 22px;
+      margin: 30px 0 20px;
+    }
+    &_inner{
+      .svg{ @include transition(all 0.5s);}
+      &:hover{
+          .svg{@include transforms(translateY(-5px));}
+      }
+    }  
+  }
+  &_faqs{
+    &_left{
+      width: 220px;
+      flex-shrink: 0;        
+      margin-right: 20px;
+    }
+    &_right{
+      width: calc(100% - 220px);
+    }
+  }
+
+  &_platform{
+    p{
+      font-size: 15px;
+      line-height: 26px;
+      color: color(200);
+    }
+
+  }
+  @include media-breakpoint-down(xxl){
+    &_platform{
+      .commonhead{
+        margin-bottom: 40px;
+        &_button{margin-top: 40px;}
+      }
+      h3{
+        font-size: 20px;
+        margin: 20px 0 10px;
+      }
+    }
+  }
+  @include media-breakpoint-down(lg){
+    &_platform{
+      .commonhead{
+        margin-bottom: 30px;
+        &_button{margin-top: 30px;}
+      }
+      [class*="col-"]{
+        &:not(:last-child){
+          margin-bottom: 15px;
+        }
+        }
+        h3{
+          font-size: 18px;
+          margin: 15px 0 5px;
+        }
+        p {
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+  }
+  @include media-breakpoint-down(md){
+    &_platform{
+      .commonhead{
+        margin-bottom: 20px;
+      }
+    }
+
+    &_faqs{
+      &_left{
+        width: 180px;
+        margin-right: 10px;
+      } 
+      &_right{
+        width: calc(100% - 180px);
+      }
+    }
+  }
+  @include media-breakpoint-down(sm){
+    &_platform{
+      h3{
+        font-size: 16px;
+      }
+      p{
+        font-size: 13px;
+        line-height: 19px;
+      }
+      [class*="col-"]{
+        &:not(:last-child){
+          margin-bottom: 20px;
+        }
+      }
+    }
+    &_faqs{
+      &_left{
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      &_right{
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+// Fonts
+.font-lt {
+  font-family: font(lt) !important;
+}
+.font-rg {
+  font-family: font(rg) !important;
+}
+.font-md {
+  font-family: font(md) !important;
+}
+.font-sm {
+  font-family: font(sb) !important;
+}
+.font-bd {
+  font-family: font(bd) !important;
+}
+.font-bk {
+  font-family: font(bk) !important;
+}
+.font-ex {
+  font-family: font(ex) !important;
+}
+
+// links
+a {
+  @include transition(all 0.4s);
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+//Text color
+.text-200 {
+  color: color(200) !important;
+}
+.text-400 {
+  color: color(400) !important;
+}
+.text-500 {
+  color: color(500) !important;
+}
+.text-600 {
+  color: color(600) !important;
+}
+.text-800 {
+  color: color(800) !important;
+}
+
+//common bg
+
+.bg-55 {
+  background-color: color(55);
+}
+.bg-95 {
+  background-color: color(95);
+}
+.bg-500 {
+  background-color: color(500);
+}
+.bg-800 {
+  background-color: color(800);
+}
+.bg-900 {
+  background-color: color(900);
+}
+
+//Padding
+.py-70 {
+  padding: 70px 0px;
+  @media (max-width: 1599px) {
+    padding: 60px 0px;
+  }
+  @media (max-width: 1499px) {
+    padding: 50px 0px;
+  }
+  @include media-breakpoint-down(xxl) {
+    padding: 40px 0;
+  }
+  @include media-breakpoint-down(lg) {
+    padding: 30px 0;
+  }
+  @include media-breakpoint-down(md) {
+    padding: 25px 0;
+  }
+}
